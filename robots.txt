@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://corywong.ca/sitemap.xml
