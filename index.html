@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cory Wong</title>
-  <meta name="description" content="Cory Wong. Into fitness, real estate, AI, tabletop games, and more. Based in Toronto.">
+  <title>Cory Wong — Coming Soon</title>
+  <meta name="description" content="Cory Wong. Something new is on the way. Sign up to stay in the loop.">
   <meta property="og:title" content="Cory Wong">
-  <meta property="og:description" content="Real estate, fitness, tech, and more. Based in Toronto.">
+  <meta property="og:description" content="Something new is on the way. Sign up to stay in the loop.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://corywong.ca">
   <link rel="canonical" href="https://corywong.ca">
@@ -372,8 +372,39 @@
     }
     .cookie-btn-decline:hover { border-color: var(--white); background: transparent; }
 
+    /* Coming soon state */
+    .coming-soon-hidden { display: none !important; }
+
+    .coming-soon {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      text-align: center;
+      padding: 2rem 0 3rem;
+    }
+    .coming-soon h1 {
+      font-size: 2.25rem;
+      color: var(--navy);
+      font-weight: 700;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+    .coming-soon .tagline {
+      font-size: 1.125rem;
+      color: var(--teal);
+      font-weight: 600;
+      margin-bottom: 1.5rem;
+    }
+    .coming-soon .message {
+      font-size: 1rem;
+      color: var(--gray-500);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
     @media (max-width: 480px) {
       .hero h1 { font-size: 1.625rem; }
+      .coming-soon h1 { font-size: 1.75rem; }
       .signup-form .form-row { flex-direction: column; }
       .re-section { padding: 1.25rem 1.5rem; }
       .cookie-inner { flex-direction: column; text-align: center; }
@@ -407,30 +438,41 @@
   </header>
 
   <main id="main" role="main">
-    <div class="hero">
+    <!-- Coming soon state -->
+    <div class="coming-soon">
       <img src="assets/cory-headshot.jpg" alt="Cory Wong" class="hero-headshot" width="140" height="140">
       <h1>Cory Wong</h1>
-
-      <div class="interest-tags">
-        <span class="interest-tag">Fitness</span>
-        <span class="interest-tag">Communication</span>
-        <span class="interest-tag">Tabletop Games</span>
-        <span class="interest-tag">AI</span>
-        <span class="interest-tag">Real Estate</span>
-        <span class="interest-tag">TV &amp; Movies</span>
-        <span class="interest-tag">Wellness</span>
-      </div>
-
-      <div class="intro">
-        <p>Hey, I'm Cory. I'm a real estate broker in Toronto. I'm also into fitness, tabletop games, public speaking, and what's new in AI and tech.</p>
-        <p>I write about what I'm thinking through: challenges, observations, moments worth noticing. Real estate, wellness, personal growth, TV I'm watching. If any of it interests you, stick around.</p>
-      </div>
+      <p class="tagline">Something new is on the way.</p>
+      <p class="message">I'm working on something. Sign up below and you'll be the first to know when it's ready.</p>
     </div>
 
-    <section class="re-section" aria-label="Real estate">
-      <h2>Real Estate</h2>
-      <p>I'm a real estate broker with Trustwell Realty Inc., Brokerage, in Toronto. Buying, selling, or thinking about the market, let's talk.</p>
-    </section>
+    <!-- Original content hidden — restore by removing coming-soon-hidden class -->
+    <div class="coming-soon-hidden">
+      <div class="hero">
+        <img src="assets/cory-headshot.jpg" alt="Cory Wong" class="hero-headshot" width="140" height="140">
+        <h1>Cory Wong</h1>
+
+        <div class="interest-tags">
+          <span class="interest-tag">Fitness</span>
+          <span class="interest-tag">Communication</span>
+          <span class="interest-tag">Tabletop Games</span>
+          <span class="interest-tag">AI</span>
+          <span class="interest-tag">Real Estate</span>
+          <span class="interest-tag">TV &amp; Movies</span>
+          <span class="interest-tag">Wellness</span>
+        </div>
+
+        <div class="intro">
+          <p>Hey, I'm Cory. I'm a real estate broker in Toronto. I'm also into fitness, tabletop games, public speaking, and what's new in AI and tech.</p>
+          <p>I write about what I'm thinking through: challenges, observations, moments worth noticing. Real estate, wellness, personal growth, TV I'm watching. If any of it interests you, stick around.</p>
+        </div>
+      </div>
+
+      <section class="re-section" aria-label="Real estate">
+        <h2>Real Estate</h2>
+        <p>I'm a real estate broker with Trustwell Realty Inc., Brokerage, in Toronto. Buying, selling, or thinking about the market, let's talk.</p>
+      </section>
+    </div>
 
     <section class="signup-section" aria-label="Newsletter signup">
       <h2>What I'm Thinking About</h2>
