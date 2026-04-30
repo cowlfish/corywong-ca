@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import ContactBlock from '../components/ContactBlock.astro';
+---
+
+<BaseLayout
+  title="Cory Wong — Writing, Communication, Technology"
+  description="Personal site of Cory Wong. Writing, communication practice, public speaking, technology, and professional reflections."
+  canonicalUrl="https://corywong.ca/"
+  siteName="Cory Wong"
+>
+  <Header siteName="Cory Wong" homeUrl="/" variant="personal" />
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h1>Cory Wong</h1>
+        <p class="hero__subtitle">
+          Writing, communication practice, public speaking, technology, and professional reflections.
+        </p>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="about">
+      <div class="container">
+        <p>
+          This site is being developed as a home for essays, ideas, projects, and communication practice.
+        </p>
+        <p>
+          Cory Wong is a Toronto-area real estate broker with Trustwell Realty Inc., Brokerage,
+          as well as a Toastmaster, writer, and technology enthusiast.
+        </p>
+      </div>
+    </section>
+
+    <!-- Links -->
+    <section class="links">
+      <div class="container">
+        <div class="links__grid">
+          <a href="https://realestate.corywong.ca" class="link-card">
+            <h2>Real Estate Services</h2>
+            <p>Buyer, seller, and investor services in the Greater Toronto Area.</p>
+          </a>
+          <a href="https://portal.corywong.ca" class="link-card">
+            <h2>Client Portal</h2>
+            <p>Resources and tools for existing clients.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <ContactBlock heading="Contact Cory" />
+  </main>
+
+  <Footer
+    disclosure="This is the personal website of Cory Wong. Real estate services are provided through Trustwell Realty Inc., Brokerage."
+    variant="personal"
+  />
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: var(--space-2xl) 0 var(--space-xl);
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-md);
+    color: var(--color-text);
+  }
+
+  .hero__subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    max-width: 32rem;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .about {
+    padding: var(--space-xl) 0;
+    text-align: center;
+  }
+
+  .about p {
+    max-width: 36rem;
+    margin: 0 auto var(--space-md);
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .about p:last-child {
+    margin-bottom: 0;
+  }
+
+  .links {
+    padding: var(--space-xl) 0;
+  }
+
+  .links__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-lg);
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .link-card {
+    display: block;
+    padding: var(--space-lg);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    text-decoration: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .link-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 2px 12px rgba(15, 118, 110, 0.08);
+  }
+
+  .link-card h2 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-xs);
+  }
+
+  .link-card p {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+</style>

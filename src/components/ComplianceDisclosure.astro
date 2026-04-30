@@ -1,0 +1,28 @@
+---
+interface Props {
+  text: string;
+}
+
+const { text } = Astro.props;
+---
+
+<aside class="compliance-disclosure" role="contentinfo" aria-label="Regulatory disclosure">
+  <div class="container">
+    <p>{text}</p>
+  </div>
+</aside>
+
+<style>
+  .compliance-disclosure {
+    padding: var(--space-md) 0;
+    background: #f5f5f4;
+    border-top: 1px solid var(--color-border);
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  .compliance-disclosure p {
+    max-width: 40rem;
+  }
+</style>

@@ -1,0 +1,42 @@
+---
+interface Props {
+  disclosure: string;
+  variant?: 'personal' | 'realestate';
+}
+
+const { disclosure, variant = 'personal' } = Astro.props;
+const currentYear = new Date().getFullYear();
+---
+
+<footer class:list={['site-footer', `site-footer--${variant}`]}>
+  <div class="container container--wide">
+    <p class="site-footer__disclosure">{disclosure}</p>
+    <p class="site-footer__copyright">&copy; {currentYear} Cory Wong</p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    background: var(--color-footer-bg);
+    color: var(--color-footer-text);
+    padding: var(--space-xl) 0;
+    margin-top: auto;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  .site-footer .container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .site-footer__disclosure {
+    max-width: 40rem;
+  }
+
+  .site-footer__copyright {
+    opacity: 0.6;
+    font-size: 0.8125rem;
+  }
+</style>

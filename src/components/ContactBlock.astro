@@ -1,0 +1,58 @@
+---
+interface Props {
+  heading?: string;
+  email?: string;
+  phone?: string;
+}
+
+const { heading = 'Get in Touch', email, phone } = Astro.props;
+---
+
+<section class="contact-block">
+  <div class="container">
+    <h2>{heading}</h2>
+    <div class="contact-block__methods">
+      {email && (
+        <a href={`mailto:${email}`} class="contact-block__link">
+          {email}
+        </a>
+      )}
+      {phone && (
+        <a href={`tel:${phone.replace(/\s/g, '')}`} class="contact-block__link">
+          {phone}
+        </a>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-block {
+    padding: var(--space-xl) 0;
+    text-align: center;
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .contact-block h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+  }
+
+  .contact-block__methods {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+  }
+
+  .contact-block__link {
+    font-size: 1rem;
+    color: var(--color-accent);
+  }
+
+  .contact-block__link:hover {
+    color: var(--color-accent-hover);
+  }
+</style>

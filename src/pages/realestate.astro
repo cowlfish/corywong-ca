@@ -1,0 +1,219 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import CtaButton from '../components/CtaButton.astro';
+import ComplianceDisclosure from '../components/ComplianceDisclosure.astro';
+import ContactBlock from '../components/ContactBlock.astro';
+---
+
+<BaseLayout
+  title="Cory Wong, Real Estate Broker | Trustwell Realty Inc., Brokerage"
+  description="Real estate services in the Greater Toronto Area. Cory Wong, Real Estate Broker at Trustwell Realty Inc., Brokerage. Book a consultation or join market updates."
+  canonicalUrl="https://realestate.corywong.ca/"
+  siteName="Cory Wong, Real Estate Broker"
+>
+  <Header
+    siteName="Cory Wong, Real Estate Broker"
+    homeUrl="/"
+    variant="realestate"
+  />
+
+  <!-- Brokerage identification — must be at least as prominent as registrant name -->
+  <div class="brokerage-bar">
+    <div class="container">
+      Trustwell Realty Inc., Brokerage
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h1>Cory Wong, Real Estate Broker</h1>
+        <p class="hero__brokerage">Trustwell Realty Inc., Brokerage</p>
+        <p class="hero__subtitle">
+          Real estate guidance for buyers, sellers, landlords, tenants, and investors
+          in the Greater Toronto Area.
+        </p>
+        <p class="hero__note">
+          This site is being built as a home for market updates, buyer and seller resources,
+          and consultation booking.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTAs -->
+    <section class="ctas">
+      <div class="container">
+        <div class="ctas__buttons">
+          <CtaButton href="#contact" label="Book a Consultation" variant="primary" />
+          <CtaButton href="#updates" label="Join Market Updates" variant="secondary" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Cross-links -->
+    <section class="cross-links">
+      <div class="container">
+        <p>
+          Already a client? <a href="https://portal.corywong.ca">Visit the Client Portal</a>.
+        </p>
+        <p class="cross-links__personal">
+          Learn more about Cory at <a href="https://corywong.ca">corywong.ca</a>.
+        </p>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <ContactBlock heading="Get in Touch" />
+
+    <!-- Compliance disclosure -->
+    <ComplianceDisclosure
+      text="Cory Wong, Real Estate Broker. Real estate services provided through Trustwell Realty Inc., Brokerage. Cory Wong is a registered broker with the Real Estate Council of Ontario (RECO). For consumer protection information, visit reco.on.ca."
+    />
+  </main>
+
+  <footer class="site-footer site-footer--realestate">
+    <div class="container container--wide">
+      <p class="site-footer__disclosure">
+        Cory Wong, Real Estate Broker. Real estate services provided through Trustwell Realty Inc., Brokerage.
+      </p>
+      <p class="site-footer__reco">
+        Cory Wong is a registered broker with the Real Estate Council of Ontario (RECO).
+        For consumer protection information, visit <a href="https://www.reco.on.ca" target="_blank" rel="noopener noreferrer">reco.on.ca</a>.
+      </p>
+      <nav class="site-footer__legal" aria-label="Legal links">
+        <span>Privacy Policy</span>
+        <span>Terms of Use</span>
+        <span>Accessibility</span>
+      </nav>
+      <p class="site-footer__copyright">
+        &copy; 2026 Trustwell Realty Inc., Brokerage. All rights reserved.
+      </p>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .brokerage-bar {
+    background: var(--color-accent);
+    color: #ffffff;
+    padding: var(--space-sm) 0;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-align: center;
+    letter-spacing: 0.01em;
+  }
+
+  .hero {
+    padding: var(--space-2xl) 0 var(--space-xl);
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.75rem, 4.5vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-xs);
+    color: var(--color-text);
+  }
+
+  .hero__brokerage {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+    font-weight: 500;
+  }
+
+  .hero__subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    max-width: 34rem;
+    margin: 0 auto var(--space-md);
+    line-height: 1.6;
+  }
+
+  .hero__note {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    max-width: 34rem;
+    margin: 0 auto;
+    opacity: 0.8;
+    line-height: 1.6;
+  }
+
+  .ctas {
+    padding: var(--space-lg) 0 var(--space-xl);
+    text-align: center;
+  }
+
+  .ctas__buttons {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cross-links {
+    padding: var(--space-xl) 0;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cross-links p {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-sm);
+  }
+
+  .cross-links__personal {
+    font-size: 0.875rem !important;
+    opacity: 0.8;
+  }
+
+  /* Custom footer for RE page (replaces shared Footer component for compliance) */
+  .site-footer {
+    background: var(--color-footer-bg);
+    color: var(--color-footer-text);
+    padding: var(--space-xl) 0;
+    margin-top: auto;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  .site-footer .container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .site-footer__disclosure {
+    max-width: 40rem;
+    font-weight: 500;
+  }
+
+  .site-footer__reco {
+    max-width: 40rem;
+    font-size: 0.8125rem;
+    opacity: 0.85;
+  }
+
+  .site-footer__reco a {
+    color: var(--color-accent-hover);
+  }
+
+  .site-footer__legal {
+    display: flex;
+    gap: var(--space-md);
+    font-size: 0.8125rem;
+    opacity: 0.6;
+    flex-wrap: wrap;
+  }
+
+  .site-footer__copyright {
+    opacity: 0.5;
+    font-size: 0.75rem;
+    margin-top: var(--space-sm);
+  }
+</style>

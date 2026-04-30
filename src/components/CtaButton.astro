@@ -1,0 +1,57 @@
+---
+interface Props {
+  href: string;
+  label: string;
+  variant?: 'primary' | 'secondary';
+  external?: boolean;
+}
+
+const { href, label, variant = 'primary', external = false } = Astro.props;
+const target = external ? '_blank' : undefined;
+const rel = external ? 'noopener noreferrer' : undefined;
+---
+
+<a
+  href={href}
+  class:list={['cta-button', `cta-button--${variant}`]}
+  target={target}
+  rel={rel}
+>
+  {label}
+</a>
+
+<style>
+  .cta-button {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.15s ease, color 0.15s ease, box-shadow 0.15s ease;
+    cursor: pointer;
+  }
+
+  .cta-button--primary {
+    background: var(--color-accent);
+    color: #ffffff;
+  }
+
+  .cta-button--primary:hover {
+    background: var(--color-accent-hover);
+    color: #ffffff;
+    box-shadow: 0 2px 8px rgba(15, 118, 110, 0.25);
+  }
+
+  .cta-button--secondary {
+    background: transparent;
+    color: var(--color-accent);
+    border: 1.5px solid var(--color-accent);
+  }
+
+  .cta-button--secondary:hover {
+    background: var(--color-accent);
+    color: #ffffff;
+  }
+</style>

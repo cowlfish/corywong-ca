@@ -1,0 +1,46 @@
+---
+interface Props {
+  siteName: string;
+  homeUrl: string;
+  variant?: 'personal' | 'realestate';
+}
+
+const { siteName, homeUrl, variant = 'personal' } = Astro.props;
+---
+
+<header class:list={['site-header', `site-header--${variant}`]}>
+  <div class="container container--wide">
+    <a href={homeUrl} class="site-header__name">{siteName}</a>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    padding: var(--space-md) 0;
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-surface);
+  }
+
+  .site-header .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .site-header__name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text);
+    text-decoration: none;
+    letter-spacing: -0.01em;
+  }
+
+  .site-header__name:hover {
+    color: var(--color-accent);
+  }
+
+  .site-header--realestate {
+    border-bottom-color: var(--color-accent);
+    border-bottom-width: 2px;
+  }
+</style>
