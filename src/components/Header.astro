@@ -2,7 +2,7 @@
 interface Props {
   siteName: string;
   homeUrl: string;
-  variant?: 'personal' | 'realestate';
+  variant?: 'personal' | 'realestate' | 'portal';
 }
 
 const { siteName, homeUrl, variant = 'personal' } = Astro.props;
@@ -42,5 +42,18 @@ const { siteName, homeUrl, variant = 'personal' } = Astro.props;
   .site-header--realestate {
     border-bottom-color: var(--color-accent);
     border-bottom-width: 2px;
+  }
+
+  .site-header--portal {
+    background: var(--color-footer-bg);
+    border-bottom: none;
+  }
+
+  .site-header--portal .site-header__name {
+    color: var(--color-footer-text);
+  }
+
+  .site-header--portal .site-header__name:hover {
+    color: var(--color-accent-hover);
   }
 </style>

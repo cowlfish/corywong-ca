@@ -6,6 +6,11 @@ export default function middleware(request: Request) {
     url.pathname = '/realestate/';
     return fetch(new Request(url.toString(), request));
   }
+
+  if (host === 'portal.corywong.ca') {
+    url.pathname = '/portal/';
+    return fetch(new Request(url.toString(), request));
+  }
 }
 
 export const config = {

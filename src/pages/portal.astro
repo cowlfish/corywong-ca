@@ -1,0 +1,160 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/Header.astro';
+import CtaButton from '../components/CtaButton.astro';
+---
+
+<BaseLayout
+  title="Client Portal | Cory Wong"
+  description="Client portal for clients of Cory Wong through Trustwell Realty Inc., Brokerage."
+  canonicalUrl="https://portal.corywong.ca/"
+  noindex={true}
+  siteName="Client Portal | Cory Wong"
+>
+  <Header siteName="Client Portal" homeUrl="/" variant="personal" />
+
+  <main>
+    <!-- Hero -->
+    <section class="hero">
+      <div class="container">
+        <h1>Client Portal</h1>
+        <p class="hero__subtitle">
+          For clients working with Cory Wong through Trustwell Realty Inc., Brokerage.
+        </p>
+      </div>
+    </section>
+
+    <!-- Body -->
+    <section class="about">
+      <div class="container">
+        <p>
+          This portal is for existing clients. It is being built to support transaction
+          checklists, document sharing, client updates, and service workflows.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTAs -->
+    <section class="ctas">
+      <div class="container">
+        <div class="ctas__buttons">
+          <CtaButton href="#login" label="Client Login" variant="primary" />
+          <CtaButton href="#contact" label="Request Access" variant="secondary" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Cross-link -->
+    <section class="cross-links">
+      <div class="container">
+        <p>
+          Looking for real estate services?
+          <a href="https://realestate.corywong.ca">Visit Cory's real estate site.</a>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer site-footer--portal">
+    <div class="container container--wide">
+      <p class="site-footer__disclosure">
+        Client portal for clients of Cory Wong through Trustwell Realty Inc., Brokerage.
+      </p>
+      <p class="site-footer__copyright">
+        &copy; {new Date().getFullYear()} Cory Wong
+      </p>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .hero {
+    padding: var(--space-2xl) 0 var(--space-xl);
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.75rem, 4.5vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-md);
+    color: var(--color-text);
+  }
+
+  .hero__subtitle {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    max-width: 32rem;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .about {
+    padding: var(--space-lg) 0;
+    text-align: center;
+  }
+
+  .about p {
+    max-width: 34rem;
+    margin: 0 auto;
+    color: var(--color-text-muted);
+    font-size: 1rem;
+    line-height: 1.7;
+  }
+
+  .ctas {
+    padding: var(--space-lg) 0 var(--space-xl);
+    text-align: center;
+  }
+
+  .ctas__buttons {
+    display: flex;
+    gap: var(--space-md);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .cross-links {
+    padding: var(--space-xl) 0;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cross-links p {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+  }
+
+  .cross-links a {
+    color: var(--color-accent);
+    text-decoration: none;
+  }
+
+  .cross-links a:hover {
+    text-decoration: underline;
+  }
+
+  .site-footer {
+    background: var(--color-footer-bg);
+    color: var(--color-footer-text);
+    padding: var(--space-xl) 0;
+    margin-top: auto;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  .site-footer .container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .site-footer__disclosure {
+    max-width: 40rem;
+  }
+
+  .site-footer__copyright {
+    opacity: 0.6;
+    font-size: 0.8125rem;
+  }
+</style>
