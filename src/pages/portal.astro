@@ -2,139 +2,232 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/Header.astro';
 import CtaButton from '../components/CtaButton.astro';
+import ComplianceDisclosure from '../components/ComplianceDisclosure.astro';
 ---
 
 <BaseLayout
-  title="Client Portal | Cory Wong"
+  title="Client Portal | Cory Wong, Real Estate Broker"
   description="Client portal for clients of Cory Wong through Trustwell Realty Inc., Brokerage."
   canonicalUrl="https://portal.corywong.ca/"
   noindex={true}
   siteName="Client Portal | Cory Wong"
 >
-  <Header siteName="Client Portal" homeUrl="/" variant="personal" />
+  <Header
+    siteName="Client Portal"
+    homeUrl="/"
+    variant="portal"
+  />
 
   <main>
-    <!-- Hero -->
-    <section class="hero">
+    <!-- Portal hero — dark, app-like feel -->
+    <section class="portal-hero">
       <div class="container">
+        <p class="portal-hero__eyebrow">Client Portal</p>
         <h1>Client Portal</h1>
-        <p class="hero__subtitle">
-          For clients working with Cory Wong through Trustwell Realty Inc., Brokerage.
+        <p class="portal-hero__subtitle">
+          Your workspace for transaction documents, market insights, and direct communication with Cory.
         </p>
-      </div>
-    </section>
-
-    <!-- Body -->
-    <section class="about">
-      <div class="container">
-        <p>
-          This portal is for existing clients. It is being built to support transaction
-          checklists, document sharing, client updates, and service workflows.
-        </p>
-      </div>
-    </section>
-
-    <!-- CTAs -->
-    <section class="ctas">
-      <div class="container">
-        <div class="ctas__buttons">
-          <CtaButton href="#login" label="Client Login" variant="primary" />
+        <div class="portal-hero__actions">
+          <CtaButton href="#login" label="Sign In" variant="primary" />
           <CtaButton href="#contact" label="Request Access" variant="secondary" />
         </div>
       </div>
     </section>
 
-    <!-- Cross-link -->
-    <section class="cross-links">
+    <!-- Workspace cards -->
+    <section class="workspace">
+      <div class="container container--wide">
+        <div class="workspace__grid">
+          <div class="workspace__card">
+            <div class="workspace__icon" aria-hidden="true">&#128196;</div>
+            <h2>Documents</h2>
+            <p>Access agreements, disclosures, and transaction paperwork.</p>
+            <span class="workspace__status">Coming soon</span>
+          </div>
+          <div class="workspace__card">
+            <div class="workspace__icon" aria-hidden="true">&#128200;</div>
+            <h2>Market Updates</h2>
+            <p>Neighbourhood reports, pricing trends, and curated listings.</p>
+            <span class="workspace__status">Coming soon</span>
+          </div>
+          <div class="workspace__card">
+            <div class="workspace__icon" aria-hidden="true">&#128172;</div>
+            <h2>Messages</h2>
+            <p>Communicate directly with Cory about your file.</p>
+            <span class="workspace__status">Coming soon</span>
+          </div>
+          <div class="workspace__card">
+            <div class="workspace__icon" aria-hidden="true">&#128197;</div>
+            <h2>Schedule</h2>
+            <p>View upcoming showings, inspections, and key dates.</p>
+            <span class="workspace__status">Coming soon</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cross-links -->
+    <section class="portal-links">
       <div class="container">
         <p>
-          Looking for real estate services?
-          <a href="https://realestate.corywong.ca">Visit Cory's real estate site.</a>
+          Looking for general real estate services? Visit <a href="https://realestate.corywong.ca">realestate.corywong.ca</a>.
+        </p>
+        <p class="portal-links__personal">
+          Learn more about Cory at <a href="https://corywong.ca">corywong.ca</a>.
         </p>
       </div>
     </section>
+
+    <!-- Compliance disclosure -->
+    <ComplianceDisclosure
+      text="Client portal for clients of Cory Wong through Trustwell Realty Inc., Brokerage. Cory Wong is a registered broker with the Real Estate Council of Ontario (RECO). For consumer protection information, visit reco.on.ca."
+    />
   </main>
 
-  <footer class="site-footer site-footer--portal">
+  <footer class="portal-footer">
     <div class="container container--wide">
-      <p class="site-footer__disclosure">
+      <p class="portal-footer__disclosure">
         Client portal for clients of Cory Wong through Trustwell Realty Inc., Brokerage.
       </p>
-      <p class="site-footer__copyright">
-        &copy; {new Date().getFullYear()} Cory Wong
+      <p class="portal-footer__reco">
+        Registered with the Real Estate Council of Ontario (RECO).
+        <a href="https://www.reco.on.ca" target="_blank" rel="noopener noreferrer">reco.on.ca</a>
+      </p>
+      <nav class="portal-footer__legal" aria-label="Legal links">
+        <span>Privacy Policy</span>
+        <span>Terms of Use</span>
+        <span>Accessibility</span>
+      </nav>
+      <p class="portal-footer__copyright">
+        &copy; 2026 Trustwell Realty Inc., Brokerage. All rights reserved.
       </p>
     </div>
   </footer>
 </BaseLayout>
 
 <style>
-  .hero {
+  /* Portal-specific dark hero for app-like feel */
+  .portal-hero {
+    background: var(--color-footer-bg);
+    color: var(--color-footer-text);
     padding: var(--space-2xl) 0 var(--space-xl);
     text-align: center;
   }
 
-  .hero h1 {
+  .portal-hero__eyebrow {
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--color-accent-hover);
+    margin-bottom: var(--space-sm);
+  }
+
+  .portal-hero h1 {
     font-size: clamp(1.75rem, 4.5vw, 2.5rem);
     font-weight: 700;
     letter-spacing: -0.02em;
     margin-bottom: var(--space-md);
-    color: var(--color-text);
+    color: #ffffff;
   }
 
-  .hero__subtitle {
+  .portal-hero__subtitle {
     font-size: 1rem;
-    color: var(--color-text-muted);
-    max-width: 32rem;
-    margin: 0 auto;
+    color: var(--color-footer-text);
+    max-width: 30rem;
+    margin: 0 auto var(--space-lg);
     line-height: 1.6;
+    opacity: 0.85;
   }
 
-  .about {
-    padding: var(--space-lg) 0;
-    text-align: center;
-  }
-
-  .about p {
-    max-width: 34rem;
-    margin: 0 auto;
-    color: var(--color-text-muted);
-    font-size: 1rem;
-    line-height: 1.7;
-  }
-
-  .ctas {
-    padding: var(--space-lg) 0 var(--space-xl);
-    text-align: center;
-  }
-
-  .ctas__buttons {
+  .portal-hero__actions {
     display: flex;
     gap: var(--space-md);
     justify-content: center;
     flex-wrap: wrap;
   }
 
-  .cross-links {
+  .portal-hero__actions :global(.cta-button--secondary) {
+    color: var(--color-footer-text);
+    border-color: var(--color-footer-text);
+  }
+
+  .portal-hero__actions :global(.cta-button--secondary:hover) {
+    background: var(--color-footer-text);
+    color: var(--color-footer-bg);
+  }
+
+  /* Workspace card grid */
+  .workspace {
+    padding: var(--space-xl) 0 var(--space-2xl);
+  }
+
+  .workspace__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-lg);
+  }
+
+  .workspace__card {
+    padding: var(--space-lg);
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .workspace__icon {
+    font-size: 1.75rem;
+    margin-bottom: var(--space-sm);
+  }
+
+  .workspace__card h2 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-xs);
+  }
+
+  .workspace__card p {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+    margin-bottom: var(--space-md);
+  }
+
+  .workspace__status {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-text-muted);
+    background: #f5f5f4;
+    padding: 0.25rem 0.75rem;
+    border-radius: 999px;
+    opacity: 0.7;
+  }
+
+  /* Cross-links */
+  .portal-links {
     padding: var(--space-xl) 0;
     text-align: center;
     border-top: 1px solid var(--color-border);
   }
 
-  .cross-links p {
+  .portal-links p {
     font-size: 0.9375rem;
     color: var(--color-text-muted);
+    margin-bottom: var(--space-sm);
   }
 
-  .cross-links a {
-    color: var(--color-accent);
-    text-decoration: none;
+  .portal-links__personal {
+    font-size: 0.875rem !important;
+    opacity: 0.8;
   }
 
-  .cross-links a:hover {
-    text-decoration: underline;
-  }
-
-  .site-footer {
+  /* Portal footer with brokerage disclosure */
+  .portal-footer {
     background: var(--color-footer-bg);
     color: var(--color-footer-text);
     padding: var(--space-xl) 0;
@@ -143,18 +236,37 @@ import CtaButton from '../components/CtaButton.astro';
     line-height: 1.6;
   }
 
-  .site-footer .container {
+  .portal-footer .container {
     display: flex;
     flex-direction: column;
     gap: var(--space-sm);
   }
 
-  .site-footer__disclosure {
+  .portal-footer__disclosure {
     max-width: 40rem;
+    font-weight: 500;
   }
 
-  .site-footer__copyright {
-    opacity: 0.6;
+  .portal-footer__reco {
     font-size: 0.8125rem;
+    opacity: 0.85;
+  }
+
+  .portal-footer__reco a {
+    color: var(--color-accent-hover);
+  }
+
+  .portal-footer__legal {
+    display: flex;
+    gap: var(--space-md);
+    font-size: 0.8125rem;
+    opacity: 0.6;
+    flex-wrap: wrap;
+  }
+
+  .portal-footer__copyright {
+    opacity: 0.5;
+    font-size: 0.75rem;
+    margin-top: var(--space-sm);
   }
 </style>

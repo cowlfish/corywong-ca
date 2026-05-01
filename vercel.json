@@ -10,6 +10,11 @@
       "source": "/(.*)",
       "has": [{ "type": "host", "value": "re.corywong.ca" }],
       "destination": "/realestate"
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "portal.corywong.ca" }],
+      "destination": "/portal"
     }
   ],
   "redirects": [
