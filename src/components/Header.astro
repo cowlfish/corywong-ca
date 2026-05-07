@@ -1,18 +1,53 @@
 ---
+interface NavItem {
+  label: string;
+  href: string;
+}
+
 interface Props {
   siteName: string;
   homeUrl: string;
   variant?: 'personal' | 'realestate' | 'portal';
+  navItems?: NavItem[];
+  ctaLabel?: string;
+  ctaHref?: string;
 }
 
-const { siteName, homeUrl, variant = 'personal' } = Astro.props;
+const { siteName, homeUrl, variant = 'personal', navItems = [], ctaLabel, ctaHref } = Astro.props;
 ---
 
 <header class:list={['site-header', `site-header--${variant}`]}>
   <div class="container container--wide">
     <a href={homeUrl} class="site-header__name">{siteName}</a>
+    {navItems.length > 0 && (
+      <>
+        <button class="site-header__toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span class="site-header__hamburger"></span>
+        </button>
+        <nav class="site-header__nav" aria-label="Main navigation">
+          {navItems.map(item => (
+            <a href={item.href} class="site-header__link">{item.label}</a>
+          ))}
+          {ctaLabel && ctaHref && (
+            <a href={ctaHref} class="site-header__cta">{ctaLabel}</a>
+          )}
+        </nav>
+      </>
+    )}
   </div>
 </header>
+
+<script>
+  const toggle = document.querySelector('.site-header__toggle');
+  const nav = document.querySelector('.site-header__nav');
+  if (toggle && nav) {
+    toggle.addEventListener('click', () => {
+      const expanded = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!expanded));
+      nav.classList.toggle('site-header__nav--open');
+    });
+  }
+</script>
 
 <style>
   .site-header {
@@ -25,6 +60,8 @@ const { siteName, homeUrl, variant = 'personal' } = Astro.props;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
   }
 
   .site-header__name {
@@ -55,5 +92,109 @@ const { siteName, homeUrl, variant = 'personal' } = Astro.props;
 
   .site-header--portal .site-header__name:hover {
     color: var(--color-accent-hover);
+  }
+
+  .site-header__nav {
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+  }
+
+  .site-header__link {
+    font-size: 0.9375rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    text-decoration: none;
+    transition: color 0.15s ease;
+  }
+
+  .site-header__link:hover {
+    color: var(--color-accent);
+  }
+
+  .site-header__cta {
+    display: inline-block;
+    padding: 0.5rem 1.25rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-decoration: none;
+    background: var(--color-accent);
+    color: #ffffff;
+    transition: background-color 0.15s ease;
+    white-space: nowrap;
+  }
+
+  .site-header__cta:hover {
+    background: var(--color-accent-hover);
+    color: #ffffff;
+  }
+
+  .site-header__toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: var(--space-xs);
+  }
+
+  .site-header__hamburger,
+  .site-header__hamburger::before,
+  .site-header__hamburger::after {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: var(--color-text);
+    border-radius: 1px;
+    transition: transform 0.2s ease;
+  }
+
+  .site-header__hamburger {
+    position: relative;
+  }
+
+  .site-header__hamburger::before,
+  .site-header__hamburger::after {
+    content: '';
+    position: absolute;
+    left: 0;
+  }
+
+  .site-header__hamburger::before {
+    top: -7px;
+  }
+
+  .site-header__hamburger::after {
+    top: 7px;
+  }
+
+  @media (max-width: 768px) {
+    .site-header__toggle {
+      display: block;
+    }
+
+    .site-header__nav {
+      display: none;
+      width: 100%;
+      flex-direction: column;
+      align-items: stretch;
+      gap: 0;
+      padding-top: var(--space-md);
+      border-top: 1px solid var(--color-border);
+    }
+
+    .site-header__nav--open {
+      display: flex;
+    }
+
+    .site-header__link {
+      padding: var(--space-sm) 0;
+      border-bottom: 1px solid var(--color-border);
+    }
+
+    .site-header__cta {
+      margin-top: var(--space-sm);
+      text-align: center;
+    }
   }
 </style>

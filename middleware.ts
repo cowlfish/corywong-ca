@@ -3,7 +3,7 @@ export default function middleware(request: Request) {
   const host = request.headers.get('host') || '';
 
   if (host === 'realestate.corywong.ca' || host === 're.corywong.ca') {
-    url.pathname = '/realestate/';
+    url.pathname = '/realestate' + url.pathname;
     return fetch(new Request(url.toString(), request));
   }
 
@@ -14,5 +14,5 @@ export default function middleware(request: Request) {
 }
 
 export const config = {
-  matcher: '/',
+  matcher: '/((?!_astro|favicon).*)',
 };

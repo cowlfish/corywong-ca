@@ -1,0 +1,182 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Header from '../components/Header.astro';
+import ComplianceDisclosure from '../components/ComplianceDisclosure.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath?: string;
+}
+
+const { title, description, canonicalPath = '' } = Astro.props;
+const fullTitle = `${title} | Cory Wong, Real Estate Agent`;
+const canonicalUrl = `https://realestate.corywong.ca${canonicalPath}`;
+
+const navItems = [
+  { label: 'Buy', href: '/buy' },
+  { label: 'Sell', href: '/sell' },
+  { label: 'About', href: '/about' },
+  { label: 'Contact', href: '/contact' },
+];
+---
+
+<BaseLayout
+  title={fullTitle}
+  description={description}
+  canonicalUrl={canonicalUrl}
+  siteName="Cory Wong, Real Estate Agent"
+>
+  <Header
+    siteName="Cory Wong"
+    homeUrl="/"
+    variant="realestate"
+    navItems={navItems}
+    ctaLabel="Book a Consultation"
+    ctaHref="/contact"
+  />
+
+  <div class="brokerage-bar">
+    <div class="container">
+      Cory Wong, Real Estate Agent. Trustwell Realty Inc., Brokerage.
+    </div>
+  </div>
+
+  <main>
+    <slot />
+  </main>
+
+  <ComplianceDisclosure
+    text="Cory Wong, Real Estate Agent. Real estate services provided through Trustwell Realty Inc., Brokerage. For consumer protection information, visit reco.on.ca."
+  />
+
+  <footer class="site-footer">
+    <div class="container container--wide">
+      <div class="site-footer__top">
+        <div class="site-footer__brand">
+          <p class="site-footer__disclosure">
+            Cory Wong, Real Estate Agent. Real estate services provided through Trustwell Realty Inc., Brokerage.
+          </p>
+          <p class="site-footer__reco">
+            For consumer protection information, visit <a href="https://www.reco.on.ca" target="_blank" rel="noopener noreferrer">reco.on.ca</a>.
+          </p>
+        </div>
+        <nav class="site-footer__nav" aria-label="Footer navigation">
+          <a href="/buy">Buy</a>
+          <a href="/sell">Sell</a>
+          <a href="/about">About</a>
+          <a href="/contact">Contact</a>
+          <a href="/market-updates">Market Updates</a>
+          <a href="/resources">Resources</a>
+        </nav>
+      </div>
+      <div class="site-footer__bottom">
+        <nav class="site-footer__legal" aria-label="Legal links">
+          <span>Privacy Policy</span>
+          <span>Terms of Use</span>
+          <span>Accessibility</span>
+        </nav>
+        <p class="site-footer__copyright">
+          &copy; {new Date().getFullYear()} Trustwell Realty Inc., Brokerage. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .brokerage-bar {
+    background: var(--color-accent);
+    color: #ffffff;
+    padding: var(--space-xs) 0;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 0.01em;
+  }
+
+  .site-footer {
+    background: var(--color-footer-bg);
+    color: var(--color-footer-text);
+    padding: var(--space-xl) 0 var(--space-lg);
+    margin-top: auto;
+    font-size: 0.875rem;
+    line-height: 1.6;
+  }
+
+  .site-footer__top {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--space-xl);
+    padding-bottom: var(--space-lg);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .site-footer__brand {
+    max-width: 28rem;
+  }
+
+  .site-footer__disclosure {
+    font-weight: 500;
+    margin-bottom: var(--space-xs);
+  }
+
+  .site-footer__reco {
+    font-size: 0.8125rem;
+    opacity: 0.85;
+  }
+
+  .site-footer__reco a {
+    color: var(--color-accent-hover);
+  }
+
+  .site-footer__nav {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+    font-size: 0.8125rem;
+  }
+
+  .site-footer__nav a {
+    color: var(--color-footer-text);
+    opacity: 0.8;
+  }
+
+  .site-footer__nav a:hover {
+    color: var(--color-accent-hover);
+    opacity: 1;
+  }
+
+  .site-footer__bottom {
+    padding-top: var(--space-md);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-sm);
+  }
+
+  .site-footer__legal {
+    display: flex;
+    gap: var(--space-md);
+    font-size: 0.75rem;
+    opacity: 0.5;
+  }
+
+  .site-footer__copyright {
+    opacity: 0.4;
+    font-size: 0.75rem;
+  }
+
+  @media (max-width: 640px) {
+    .site-footer__top {
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
+    .site-footer__bottom {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+</style>

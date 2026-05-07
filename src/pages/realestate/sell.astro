@@ -1,0 +1,407 @@
+---
+import RealestateLayout from '../../layouts/RealestateLayout.astro';
+import CtaButton from '../../components/CtaButton.astro';
+import NewsletterSignup from '../../components/NewsletterSignup.astro';
+---
+
+<RealestateLayout
+  title="Seller Services"
+  description="Selling your home in the Greater Toronto Area? Cory Wong provides strategic pricing, professional marketing, and expert negotiation to maximize your sale."
+  canonicalPath="/sell"
+>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Selling Your Home in the GTA</h1>
+      <p class="page-hero__subtitle">
+        Strategic pricing, effective marketing, and skilled negotiation
+        to get the best result for your home sale.
+      </p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+      <h2>The Selling Process</h2>
+      <div class="process-steps">
+        <div class="step">
+          <span class="step__number">1</span>
+          <h3>Market Evaluation</h3>
+          <p>I'll provide a detailed comparative market analysis to determine the optimal listing price, based on recent sales, current inventory, and market conditions in your neighbourhood.</p>
+        </div>
+        <div class="step">
+          <span class="step__number">2</span>
+          <h3>Preparation &amp; Staging</h3>
+          <p>Strategic advice on improvements that offer the best return on investment. I'll connect you with trusted stagers, photographers, and contractors as needed.</p>
+        </div>
+        <div class="step">
+          <span class="step__number">3</span>
+          <h3>Marketing &amp; Exposure</h3>
+          <p>Professional photography, compelling listing descriptions, MLS exposure, targeted digital marketing, and open house strategy to attract qualified buyers.</p>
+        </div>
+        <div class="step">
+          <span class="step__number">4</span>
+          <h3>Showings &amp; Feedback</h3>
+          <p>Coordinated showings with timely feedback reports. I'll keep you informed at every stage so you can make confident decisions.</p>
+        </div>
+        <div class="step">
+          <span class="step__number">5</span>
+          <h3>Offers &amp; Negotiation</h3>
+          <p>Expert analysis of every offer and skilled negotiation to achieve the best price and terms. I'll explain each clause and protect your interests throughout.</p>
+        </div>
+        <div class="step">
+          <span class="step__number">6</span>
+          <h3>Closing &amp; Beyond</h3>
+          <p>I'll manage all the details from accepted offer to closing day, coordinating with lawyers, lenders, and the buyer's agent to ensure a smooth transaction.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <details class="faq-item">
+          <summary>How do you determine the right listing price?</summary>
+          <p>I prepare a comprehensive comparative market analysis (CMA) that examines recent sales of similar properties in your area, current competition, and market trends. This data-driven approach ensures your home is priced to attract buyers while maximizing your return.</p>
+        </details>
+        <details class="faq-item">
+          <summary>How long does it take to sell a home in the GTA?</summary>
+          <p>Average days on market vary by neighbourhood and season. Well-priced homes in desirable areas often sell within weeks. During our consultation, I'll share current data for your specific area and property type.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What costs should I expect when selling?</summary>
+          <p>Key costs include real estate commission, legal fees, potential staging and repairs, and any mortgage discharge fees. I'll provide a detailed net-proceeds estimate so you know exactly what to expect.</p>
+        </details>
+        <details class="faq-item">
+          <summary>Do I need to stage my home?</summary>
+          <p>Staging can significantly impact buyer perception and sale price. I'll assess your home and recommend the level of staging that makes sense — from simple decluttering tips to full professional staging.</p>
+        </details>
+        <details class="faq-item">
+          <summary>What if my home doesn't sell?</summary>
+          <p>If your home isn't attracting offers, we'll review market feedback, adjust pricing strategy if needed, and explore alternative marketing approaches. Communication is key — I'll keep you informed every step of the way.</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <section class="lead-form-section" id="valuation">
+    <div class="container">
+      <h2>Request a Home Valuation</h2>
+      <p class="lead-form-section__subtitle">Get a professional assessment of your property's current market value.</p>
+      <form class="lead-form" id="seller-form" data-form-type="seller">
+        <div class="form-row">
+          <div class="form-field">
+            <label for="seller-name">Name</label>
+            <input type="text" id="seller-name" name="name" required autocomplete="name" />
+          </div>
+          <div class="form-field">
+            <label for="seller-email">Email</label>
+            <input type="email" id="seller-email" name="email" required autocomplete="email" />
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="seller-address">Property Address</label>
+          <input type="text" id="seller-address" name="address" required placeholder="e.g., 123 Main Street, Markham, ON" />
+        </div>
+        <div class="form-field">
+          <label for="seller-timeline">Timeline</label>
+          <select id="seller-timeline" name="timeline">
+            <option value="">When are you looking to sell?</option>
+            <option value="asap">As soon as possible</option>
+            <option value="1-3months">1–3 months</option>
+            <option value="3-6months">3–6 months</option>
+            <option value="6-12months">6–12 months</option>
+            <option value="exploring">Just curious about my home's value</option>
+          </select>
+        </div>
+        <div class="form-field">
+          <label for="seller-notes">Anything else about your property?</label>
+          <textarea id="seller-notes" name="notes" rows="3" placeholder="e.g., recent renovations, property type, number of bedrooms"></textarea>
+        </div>
+        <button type="submit" class="form-submit">Request Valuation</button>
+        <p class="form-status" id="seller-form-status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Thinking About Selling?</h2>
+      <p>Book a free consultation to discuss your options and get a market evaluation.</p>
+      <CtaButton href="/contact" label="Book a Consultation" variant="primary" />
+    </div>
+  </section>
+
+  <NewsletterSignup />
+</RealestateLayout>
+
+<script>
+  const form = document.getElementById('seller-form') as HTMLFormElement;
+  const status = document.getElementById('seller-form-status') as HTMLElement;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    status.textContent = 'Sending...';
+    status.className = 'form-status';
+
+    const data = Object.fromEntries(new FormData(form));
+
+    try {
+      const res = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ ...data, type: 'seller' }),
+      });
+
+      if (res.ok) {
+        status.textContent = 'Thank you! I\'ll be in touch with your valuation.';
+        status.classList.add('form-status--success');
+        form.reset();
+      } else {
+        throw new Error('Failed');
+      }
+    } catch {
+      status.textContent = 'Something went wrong. Please email directly or try again.';
+      status.classList.add('form-status--error');
+    }
+  });
+</script>
+
+<style>
+  .page-hero {
+    padding: var(--space-2xl) 0 var(--space-xl);
+    text-align: center;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-md);
+  }
+
+  .page-hero__subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    max-width: 34rem;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .content-section {
+    padding: var(--space-xl) 0;
+  }
+
+  .content-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: var(--space-lg);
+    text-align: center;
+  }
+
+  .process-steps {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-lg);
+    max-width: 36rem;
+    margin: 0 auto;
+  }
+
+  .step {
+    position: relative;
+    padding-left: 3.5rem;
+  }
+
+  .step__number {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--color-accent);
+    color: #fff;
+    border-radius: 50%;
+    font-weight: 700;
+    font-size: 0.875rem;
+  }
+
+  .step h3 {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+  }
+
+  .step p {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  .faq-section {
+    padding: var(--space-xl) 0;
+    background: #f5f5f4;
+  }
+
+  .faq-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: var(--space-lg);
+    text-align: center;
+  }
+
+  .faq-list {
+    max-width: 36rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+  }
+
+  .faq-item {
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: var(--space-md);
+  }
+
+  .faq-item summary {
+    font-weight: 600;
+    font-size: 0.9375rem;
+    cursor: pointer;
+    list-style: none;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item[open] summary {
+    margin-bottom: var(--space-sm);
+  }
+
+  .faq-item p {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+  }
+
+  .lead-form-section {
+    padding: var(--space-xl) 0;
+  }
+
+  .lead-form-section h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: var(--space-xs);
+  }
+
+  .lead-form-section__subtitle {
+    text-align: center;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  .lead-form {
+    max-width: 32rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-md);
+  }
+
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-md);
+  }
+
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-xs);
+  }
+
+  .form-field label {
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .form-field input,
+  .form-field select,
+  .form-field textarea {
+    padding: 0.625rem 0.75rem;
+    border: 1px solid var(--color-border);
+    border-radius: 6px;
+    font-size: 0.9375rem;
+    font-family: var(--font-sans);
+    background: var(--color-surface);
+    transition: border-color 0.15s ease;
+  }
+
+  .form-field input:focus,
+  .form-field select:focus,
+  .form-field textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(15, 118, 110, 0.1);
+  }
+
+  .form-submit {
+    padding: 0.75rem 1.75rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    background: var(--color-accent);
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+  }
+
+  .form-submit:hover {
+    background: var(--color-accent-hover);
+  }
+
+  .form-status {
+    text-align: center;
+    font-size: 0.875rem;
+    min-height: 1.25rem;
+  }
+
+  .form-status--success {
+    color: var(--color-accent);
+  }
+
+  .form-status--error {
+    color: #dc2626;
+  }
+
+  .cta-banner {
+    padding: var(--space-xl) 0;
+    text-align: center;
+    background: #f5f5f4;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cta-banner h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+  }
+
+  .cta-banner p {
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  @media (max-width: 640px) {
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

@@ -1,0 +1,238 @@
+---
+import RealestateLayout from '../../layouts/RealestateLayout.astro';
+import CtaButton from '../../components/CtaButton.astro';
+---
+
+<RealestateLayout
+  title="Greater Toronto Area Real Estate"
+  description="Real estate services in the Greater Toronto Area. Cory Wong, Real Estate Agent at Trustwell Realty Inc., Brokerage. Book a consultation or join market updates."
+  canonicalPath="/"
+>
+  <section class="hero">
+    <div class="container">
+      <h1>Your Trusted Guide to<br />GTA Real Estate</h1>
+      <p class="hero__subtitle">
+        Whether you're buying your first home, selling a property, or exploring investment
+        opportunities, Cory Wong provides clear, honest guidance through every step of your
+        real estate journey in the Greater Toronto Area.
+      </p>
+      <div class="hero__ctas">
+        <CtaButton href="/contact" label="Book a Consultation" variant="primary" />
+        <CtaButton href="/buy" label="Buying a Home" variant="secondary" />
+        <CtaButton href="/sell" label="Selling a Home" variant="secondary" />
+      </div>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="container container--wide">
+      <h2 class="section-heading">How I Can Help</h2>
+      <div class="services__grid">
+        <a href="/buy" class="service-card">
+          <h3>Buyers</h3>
+          <p>From pre-approval to closing day, I'll help you find the right home at the right price in the GTA market.</p>
+        </a>
+        <a href="/sell" class="service-card">
+          <h3>Sellers</h3>
+          <p>Strategic pricing, professional marketing, and skilled negotiation to maximize your home's value.</p>
+        </a>
+        <a href="/market-updates" class="service-card">
+          <h3>Market Updates</h3>
+          <p>Stay informed with regular insights on GTA real estate trends, pricing, and neighbourhood developments.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-preview">
+    <div class="container">
+      <div class="about-preview__content">
+        <img src="/headshot.jpg" alt="Cory Wong, Real Estate Agent" class="about-preview__photo" width="200" height="200" loading="lazy" />
+        <div>
+          <h2>About Cory Wong</h2>
+          <p>
+            As a real estate professional serving the Greater Toronto Area, I bring a detail-oriented,
+            technology-forward approach to every transaction. My goal is to make your real estate
+            experience as clear and stress-free as possible.
+          </p>
+          <a href="/about" class="about-preview__link">Learn more &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cross-links">
+    <div class="container">
+      <p>
+        Already a client? <a href="https://portal.corywong.ca">Visit the Client Portal</a>.
+      </p>
+      <p class="cross-links__personal">
+        Learn more about Cory at <a href="https://corywong.ca">corywong.ca</a>.
+      </p>
+    </div>
+  </section>
+
+  <section class="cta-banner">
+    <div class="container">
+      <h2>Ready to Get Started?</h2>
+      <p>Book a free, no-obligation consultation to discuss your real estate goals.</p>
+      <CtaButton href="/contact" label="Book a Consultation" variant="primary" />
+    </div>
+  </section>
+</RealestateLayout>
+
+<style>
+  .hero {
+    padding: var(--space-2xl) 0 var(--space-xl);
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: clamp(1.75rem, 4.5vw, 2.75rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-md);
+    color: var(--color-text);
+    line-height: 1.2;
+  }
+
+  .hero__subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    max-width: 36rem;
+    margin: 0 auto var(--space-lg);
+    line-height: 1.6;
+  }
+
+  .hero__ctas {
+    display: flex;
+    gap: var(--space-sm);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .section-heading {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: var(--space-lg);
+  }
+
+  .services {
+    padding: var(--space-xl) 0;
+    background: #f5f5f4;
+  }
+
+  .services__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--space-md);
+  }
+
+  .service-card {
+    display: block;
+    background: var(--color-surface);
+    border-radius: 8px;
+    padding: var(--space-lg);
+    text-decoration: none;
+    border: 1px solid var(--color-border);
+    transition: box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+
+  .service-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  }
+
+  .service-card h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
+  }
+
+  .service-card p {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.5;
+  }
+
+  .about-preview {
+    padding: var(--space-xl) 0;
+  }
+
+  .about-preview__content {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+  }
+
+  .about-preview__photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .about-preview h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+  }
+
+  .about-preview p {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--space-sm);
+  }
+
+  .about-preview__link {
+    font-weight: 600;
+    font-size: 0.9375rem;
+  }
+
+  .cross-links {
+    padding: var(--space-xl) 0;
+    text-align: center;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cross-links p {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-sm);
+  }
+
+  .cross-links__personal {
+    font-size: 0.875rem !important;
+    opacity: 0.8;
+  }
+
+  .cta-banner {
+    padding: var(--space-xl) 0;
+    text-align: center;
+    background: #f5f5f4;
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cta-banner h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+  }
+
+  .cta-banner p {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  @media (max-width: 640px) {
+    .about-preview__content {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>

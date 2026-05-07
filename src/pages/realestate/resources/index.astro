@@ -1,0 +1,87 @@
+---
+import RealestateLayout from '../../../layouts/RealestateLayout.astro';
+import CtaButton from '../../../components/CtaButton.astro';
+import NewsletterSignup from '../../../components/NewsletterSignup.astro';
+---
+
+<RealestateLayout
+  title="Buyer & Seller Resources"
+  description="Real estate guides, checklists, and resources for buyers and sellers in the Greater Toronto Area. From Cory Wong, Real Estate Agent."
+  canonicalPath="/resources"
+>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Buyer &amp; Seller Resources</h1>
+      <p class="page-hero__subtitle">
+        Guides, checklists, and educational content to help you navigate
+        the real estate process with confidence.
+      </p>
+    </div>
+  </section>
+
+  <section class="coming-soon">
+    <div class="container">
+      <div class="coming-soon__card">
+        <h2>Resources are coming soon</h2>
+        <p>
+          I'm putting together practical guides for buyers and sellers — from first-time
+          home buyer checklists to understanding closing costs, staging tips, and more.
+        </p>
+        <p>
+          In the meantime, feel free to book a consultation with any questions.
+        </p>
+        <CtaButton href="/contact" label="Book a Consultation" variant="primary" />
+      </div>
+    </div>
+  </section>
+
+  <NewsletterSignup />
+</RealestateLayout>
+
+<style>
+  .page-hero {
+    padding: var(--space-2xl) 0 var(--space-xl);
+    text-align: center;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-md);
+  }
+
+  .page-hero__subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    max-width: 34rem;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .coming-soon {
+    padding: var(--space-xl) 0 var(--space-2xl);
+  }
+
+  .coming-soon__card {
+    max-width: 32rem;
+    margin: 0 auto;
+    text-align: center;
+    padding: var(--space-xl);
+    background: #f5f5f4;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+  }
+
+  .coming-soon__card h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+  }
+
+  .coming-soon__card p {
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+  }
+</style>

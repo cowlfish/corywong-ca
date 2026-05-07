@@ -4,12 +4,12 @@
     {
       "source": "/(.*)",
       "has": [{ "type": "host", "value": "realestate.corywong.ca" }],
-      "destination": "/realestate"
+      "destination": "/realestate/$1"
     },
     {
       "source": "/(.*)",
       "has": [{ "type": "host", "value": "re.corywong.ca" }],
-      "destination": "/realestate"
+      "destination": "/realestate/$1"
     },
     {
       "source": "/(.*)",

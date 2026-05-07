@@ -1,0 +1,89 @@
+---
+import RealestateLayout from '../../../layouts/RealestateLayout.astro';
+import CtaButton from '../../../components/CtaButton.astro';
+import NewsletterSignup from '../../../components/NewsletterSignup.astro';
+---
+
+<RealestateLayout
+  title="Neighbourhood Profiles"
+  description="Explore Greater Toronto Area neighbourhoods. Community profiles, market data, and local insights from Cory Wong, Real Estate Agent."
+  canonicalPath="/neighbourhoods"
+>
+  <section class="page-hero">
+    <div class="container">
+      <h1>GTA Neighbourhood Profiles</h1>
+      <p class="page-hero__subtitle">
+        Detailed profiles of neighbourhoods across the Greater Toronto Area — schools,
+        amenities, market data, and what it's really like to live there.
+      </p>
+    </div>
+  </section>
+
+  <section class="coming-soon">
+    <div class="container">
+      <div class="coming-soon__card">
+        <h2>Neighbourhood profiles are coming soon</h2>
+        <p>
+          I'm building in-depth profiles for key neighbourhoods in Toronto, Markham,
+          Richmond Hill, and across the GTA. Each profile will include market data,
+          schools, transit, amenities, and local insights.
+        </p>
+        <p>
+          Looking for information about a specific neighbourhood? Get in touch and I'll
+          share what I know.
+        </p>
+        <CtaButton href="/contact" label="Ask About a Neighbourhood" variant="primary" />
+      </div>
+    </div>
+  </section>
+
+  <NewsletterSignup />
+</RealestateLayout>
+
+<style>
+  .page-hero {
+    padding: var(--space-2xl) 0 var(--space-xl);
+    text-align: center;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-md);
+  }
+
+  .page-hero__subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    max-width: 34rem;
+    margin: 0 auto;
+    line-height: 1.6;
+  }
+
+  .coming-soon {
+    padding: var(--space-xl) 0 var(--space-2xl);
+  }
+
+  .coming-soon__card {
+    max-width: 32rem;
+    margin: 0 auto;
+    text-align: center;
+    padding: var(--space-xl);
+    background: #f5f5f4;
+    border-radius: 12px;
+    border: 1px solid var(--color-border);
+  }
+
+  .coming-soon__card h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+  }
+
+  .coming-soon__card p {
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--space-md);
+  }
+</style>

@@ -1,0 +1,157 @@
+---
+interface Props {
+  heading?: string;
+  compact?: boolean;
+}
+
+const { heading = 'Stay Informed', compact = false } = Astro.props;
+---
+
+<section class:list={['newsletter', { 'newsletter--compact': compact }]}>
+  <div class="container">
+    <h2>{heading}</h2>
+    <p>Get GTA market updates, neighbourhood insights, and buyer/seller tips delivered to your inbox.</p>
+    <form class="newsletter__form" id="newsletter-form">
+      <input
+        type="email"
+        name="email"
+        placeholder="Enter your email"
+        required
+        autocomplete="email"
+        class="newsletter__input"
+      />
+      <button type="submit" class="newsletter__submit">Subscribe</button>
+    </form>
+    <p class="newsletter__status" id="newsletter-status" aria-live="polite"></p>
+    <p class="newsletter__note">No spam. Unsubscribe anytime.</p>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('newsletter-form') as HTMLFormElement;
+  const status = document.getElementById('newsletter-status') as HTMLElement;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    status.textContent = 'Subscribing...';
+    status.className = 'newsletter__status';
+
+    const data = Object.fromEntries(new FormData(form));
+
+    try {
+      const res = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: data.email, type: 'newsletter' }),
+      });
+
+      if (res.ok) {
+        status.textContent = 'You\'re subscribed! Check your inbox.';
+        status.classList.add('newsletter__status--success');
+        form.reset();
+      } else {
+        throw new Error('Failed');
+      }
+    } catch {
+      status.textContent = 'Something went wrong. Please try again.';
+      status.classList.add('newsletter__status--error');
+    }
+  });
+</script>
+
+<style>
+  .newsletter {
+    padding: var(--space-xl) 0;
+    text-align: center;
+    background: var(--color-accent);
+    color: #ffffff;
+  }
+
+  .newsletter--compact {
+    padding: var(--space-lg) 0;
+  }
+
+  .newsletter h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+  }
+
+  .newsletter p {
+    font-size: 0.9375rem;
+    opacity: 0.9;
+    margin-bottom: var(--space-md);
+  }
+
+  .newsletter__form {
+    display: flex;
+    gap: var(--space-sm);
+    max-width: 28rem;
+    margin: 0 auto;
+  }
+
+  .newsletter__input {
+    flex: 1;
+    padding: 0.625rem 0.75rem;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    font-size: 0.9375rem;
+    font-family: var(--font-sans);
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    transition: border-color 0.15s ease;
+  }
+
+  .newsletter__input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .newsletter__input:focus {
+    outline: none;
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.15);
+  }
+
+  .newsletter__submit {
+    padding: 0.625rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    background: #ffffff;
+    color: var(--color-accent);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+    white-space: nowrap;
+  }
+
+  .newsletter__submit:hover {
+    background: #f0fdf4;
+  }
+
+  .newsletter__status {
+    font-size: 0.875rem;
+    min-height: 1.25rem;
+    margin-bottom: 0;
+  }
+
+  .newsletter__status--success {
+    color: #bbf7d0;
+  }
+
+  .newsletter__status--error {
+    color: #fca5a5;
+  }
+
+  .newsletter__note {
+    font-size: 0.8125rem;
+    opacity: 0.6;
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 480px) {
+    .newsletter__form {
+      flex-direction: column;
+    }
+  }
+</style>
