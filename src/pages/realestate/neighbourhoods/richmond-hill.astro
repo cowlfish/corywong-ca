@@ -1,0 +1,209 @@
+---
+import RealestateLayout from '../../../layouts/RealestateLayout.astro';
+import CtaButton from '../../../components/CtaButton.astro';
+import NewsletterSignup from '../../../components/NewsletterSignup.astro';
+---
+
+<RealestateLayout
+  title="Richmond Hill Real Estate | Neighbourhood Profile | Cory Wong, Real Estate Agent"
+  description="Richmond Hill real estate neighbourhood profile: housing types, price ranges, schools, transit, and market insights from Cory Wong, Real Estate Agent, Trustwell Realty Inc., Brokerage."
+  canonicalPath="/neighbourhoods/richmond-hill"
+>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Richmond Hill Real Estate: A Neighbourhood Profile</h1>
+      <p class="page-hero__subtitle">
+        Cory Wong, Real Estate Agent | Trustwell Realty Inc., Brokerage
+      </p>
+    </div>
+  </section>
+
+  <article class="profile">
+    <div class="container">
+      <div class="profile__content">
+        <p class="profile__intro">
+          Richmond Hill sits between Toronto and Newmarket and draws buyers who want a mid-size
+          city with strong schools, good parks, and GTA access. It's a family market, with
+          demand driven largely by buyers choosing space and school quality over proximity to
+          downtown.
+        </p>
+
+        <h2>Character and Feel</h2>
+        <p>
+          Richmond Hill has a mix of established post-war neighbourhoods and newer developments
+          in the north. The Oak Ridges Moraine forms the northern boundary, giving the city a
+          natural edge and limiting further northward growth. That constraint has supported
+          long-term property values.
+        </p>
+        <p>
+          The city has a diverse population, with significant Iranian, Chinese, and South Asian
+          communities. Yonge Street runs through the city centre, connecting it north to Aurora
+          and south toward Toronto.
+        </p>
+
+        <h2>Who Buys in Richmond Hill</h2>
+        <p>
+          Move-up buyers from Toronto and North York are the core buyer group. First-time buyers
+          who want a detached home and find Toronto prices out of reach are also active here.
+          Investors buy for long-term appreciation and rental income from York University,
+          Seneca, and professionals commuting into the city.
+        </p>
+
+        <h2>Housing Types and Price Ranges</h2>
+        <ul class="price-list">
+          <li><strong>Detached homes:</strong> approximately $1.2M to $2.8M (north end commands a premium for newer builds and larger lots)</li>
+          <li><strong>Semi-detached and freehold townhomes:</strong> $850K to $1.3M</li>
+          <li><strong>Condos along Yonge Street and near the GO station:</strong> from approximately $550K</li>
+        </ul>
+        <p class="profile__disclaimer">
+          Price ranges are general estimates based on early 2026 activity. Cory will give you a
+          current assessment for your specific criteria.
+        </p>
+
+        <h2>Transit and Highways</h2>
+        <p>
+          Richmond Hill is accessible via Highway 404/DVP and Highway 400. The Barrie GO line
+          serves the Richmond Hill GO station, with train service to Union Station. York Region
+          Transit connects the city to TTC subway at Finch and Sheppard.
+        </p>
+        <p>
+          The Yonge Street rapid bus corridor provides frequent service south into North York.
+        </p>
+
+        <h2>Amenities and Schools</h2>
+        <p>
+          Richmond Green Sports Centre and park, Elgin West Community Centre, and a network of
+          trails along the Oak Ridges Moraine serve families well. Retail is concentrated along
+          Yonge Street and the Highway 7 corridors.
+        </p>
+        <p>
+          Richmond Hill High School and Alexander Mackenzie High School are the main public
+          secondary schools. The York Catholic District School Board has several well-regarded
+          schools in the area.
+        </p>
+
+        <h2>Real Estate Perspective</h2>
+        <p>
+          Richmond Hill has been a stable market. Prices have been resilient compared to inner
+          Toronto. Inventory grew in 2025 and into 2026, giving buyers more options than at the
+          2021-2022 peak. Sellers in Richmond Hill need to price to current conditions.
+        </p>
+        <p>
+          If you're buying in Richmond Hill, the north end near Bond Lake is different from the
+          mid-city Yonge Street corridor. Understanding which sub-area fits your priorities
+          matters before committing to a search.
+        </p>
+
+        <div class="profile__cta">
+          <CtaButton href="/contact" label="Book a Consultation" variant="primary" />
+        </div>
+
+        <p class="profile__compliance">
+          Cory Wong, Real Estate Agent. Real estate services provided through Trustwell Realty
+          Inc., Brokerage.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <NewsletterSignup heading="Get GTA Market Updates" />
+</RealestateLayout>
+
+<style>
+  .page-hero {
+    padding: var(--space-2xl) 0 var(--space-xl);
+    text-align: center;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-md);
+  }
+
+  .page-hero__subtitle {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  .profile {
+    padding: 0 0 var(--space-xl);
+  }
+
+  .profile__content {
+    max-width: 36rem;
+    margin: 0 auto;
+  }
+
+  .profile__intro {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .profile__content h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+  }
+
+  .profile__content p {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: var(--space-md);
+  }
+
+  .price-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+  }
+
+  .price-list li {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .price-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 8px;
+    height: 8px;
+    background: var(--color-accent);
+    border-radius: 50%;
+  }
+
+  .profile__disclaimer {
+    font-size: 0.8125rem !important;
+    font-style: italic;
+    opacity: 0.8;
+  }
+
+  .profile__cta {
+    text-align: center;
+    margin: var(--space-xl) 0;
+  }
+
+  .profile__compliance {
+    font-size: 0.8125rem !important;
+    opacity: 0.7;
+    font-style: italic;
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-md);
+    margin-top: var(--space-xl);
+  }
+</style>

@@ -10,7 +10,7 @@ interface Props {
 }
 
 const { title, description, canonicalPath = '' } = Astro.props;
-const fullTitle = `${title} | Cory Wong, Real Estate Agent`;
+const fullTitle = title;
 const canonicalUrl = `https://realestate.corywong.ca${canonicalPath}`;
 
 const navItems = [

@@ -5,7 +5,7 @@ import NewsletterSignup from '../../../components/NewsletterSignup.astro';
 ---
 
 <RealestateLayout
-  title="Market Updates"
+  title="GTA Real Estate Market Update: May 2026 | Cory Wong, Real Estate Agent"
   description="GTA real estate market updates, trends, and insights from Cory Wong, Real Estate Agent at Trustwell Realty Inc., Brokerage."
   canonicalPath="/market-updates"
 >
@@ -19,19 +19,93 @@ import NewsletterSignup from '../../../components/NewsletterSignup.astro';
     </div>
   </section>
 
-  <section class="coming-soon">
+  <article class="report">
     <div class="container">
-      <div class="coming-soon__card">
-        <h2>Market updates are coming soon</h2>
+      <div class="report__content">
+        <header class="report__header">
+          <h2>GTA Real Estate Market Update: May 2026</h2>
+          <p class="report__byline">Cory Wong, Real Estate Agent | Trustwell Realty Inc., Brokerage</p>
+        </header>
+
         <p>
-          I'm preparing regular market reports covering sales data, pricing trends, and
-          neighbourhood-level insights across the GTA. Subscribe below to be notified
-          when the first update is published.
+          The spring market arrived in the GTA with mixed signals. Sales volume in April came
+          in below the 10-year average for the month. Inventory grew. That combination shifted
+          negotiating leverage toward buyers in much of the region.
         </p>
-        <CtaButton href="/contact" label="Book a Consultation" variant="primary" />
+        <p>Here's what the numbers show for Toronto, Markham, and Richmond Hill.</p>
+
+        <h3>Price Trends</h3>
+        <p>
+          GTA benchmark prices in April 2026 held relatively flat month-over-month, continuing
+          a period of stability following two years of adjustment from the 2022 peak.
+          Year-over-year, prices are modestly below April 2025, though the gap has narrowed
+          since the start of the year.
+        </p>
+        <p>
+          In Markham and Richmond Hill, detached homes drew steady interest from move-up buyers.
+          Prices in these markets have been more resilient than the broader Toronto average,
+          supported by demand from buyers priced out of inner Toronto.
+        </p>
+        <p>
+          In Toronto proper, the condo segment saw the sharpest softness. New listings outpaced
+          sales in April, pushing months of inventory above the balanced range. Sellers in this
+          segment face more competition.
+        </p>
+
+        <h3>Inventory and Days on Market</h3>
+        <p>
+          Active listings across the GTA are up approximately 25 percent year-over-year. Months
+          of inventory, a measure of how long it would take to sell all active listings at the
+          current pace, sits above 3 months for detached homes and above 4 months for condos.
+          A balanced market typically falls between 4 and 6 months.
+        </p>
+        <p>
+          Properties priced correctly are still selling. The average days on market for sold
+          properties in April was 18 days, in line with the past three months. Overpriced
+          listings are sitting longer and often see price reductions before selling.
+        </p>
+
+        <h3>What This Means for Buyers</h3>
+        <p>
+          Buyers have more time and more options than they did a year ago. Multiple-offer
+          situations still occur, particularly for well-priced detached homes in Markham and
+          Richmond Hill. The frantic conditions of 2020 to 2022 are not present. If you're
+          searching now, prepare your financing, define your criteria, and move when the right
+          property appears.
+        </p>
+
+        <h3>What This Means for Sellers</h3>
+        <p>
+          Pricing accurately from day one matters more than it did when the market absorbed
+          everything. A well-prepared home at the right price will sell. An overpriced listing
+          accumulates days on market and typically receives a lower final sale price than a
+          correctly-priced listing would have.
+        </p>
+
+        <h3>Looking Ahead</h3>
+        <p>
+          The Bank of Canada's rate decisions through the summer will affect the market. Lower
+          borrowing costs tend to bring more buyers to the table. Whether conditions shift
+          before fall depends on inflation data in May and June.
+        </p>
+        <p>
+          If you're thinking about buying or selling in the GTA this year, book a consultation.
+          I'll give you a clear picture of what's happening in your specific area.
+        </p>
+
+        <div class="report__cta">
+          <CtaButton href="/contact" label="Book a Consultation" variant="primary" />
+        </div>
+
+        <p class="report__disclaimer">
+          Cory Wong, Real Estate Agent. Real estate services provided through Trustwell Realty
+          Inc., Brokerage. This report reflects publicly available market data and Cory's
+          interpretation of current conditions. It is not a guarantee of future performance or
+          value.
+        </p>
       </div>
     </div>
-  </section>
+  </article>
 
   <NewsletterSignup heading="Get Market Updates in Your Inbox" />
 </RealestateLayout>
@@ -57,29 +131,58 @@ import NewsletterSignup from '../../../components/NewsletterSignup.astro';
     line-height: 1.6;
   }
 
-  .coming-soon {
-    padding: var(--space-xl) 0 var(--space-2xl);
+  .report {
+    padding: 0 0 var(--space-xl);
   }
 
-  .coming-soon__card {
-    max-width: 32rem;
+  .report__content {
+    max-width: 36rem;
     margin: 0 auto;
-    text-align: center;
-    padding: var(--space-xl);
-    background: #f5f5f4;
-    border-radius: 12px;
-    border: 1px solid var(--color-border);
   }
 
-  .coming-soon__card h2 {
-    font-size: 1.25rem;
+  .report__header {
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .report__header h2 {
+    font-size: 1.5rem;
     font-weight: 600;
+    margin-bottom: var(--space-xs);
+  }
+
+  .report__byline {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  .report__content h3 {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+  }
+
+  .report__content p {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
     margin-bottom: var(--space-md);
   }
 
-  .coming-soon__card p {
-    color: var(--color-text-muted);
-    line-height: 1.6;
-    margin-bottom: var(--space-lg);
+  .report__cta {
+    text-align: center;
+    margin: var(--space-xl) 0;
+  }
+
+  .report__disclaimer {
+    font-size: 0.8125rem !important;
+    opacity: 0.7;
+    font-style: italic;
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-md);
+    margin-top: var(--space-xl);
   }
 </style>

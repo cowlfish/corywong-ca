@@ -1,12 +1,11 @@
 ---
 import RealestateLayout from '../../../layouts/RealestateLayout.astro';
-import CtaButton from '../../../components/CtaButton.astro';
 import NewsletterSignup from '../../../components/NewsletterSignup.astro';
 ---
 
 <RealestateLayout
-  title="Neighbourhood Profiles"
-  description="Explore Greater Toronto Area neighbourhoods. Community profiles, market data, and local insights from Cory Wong, Real Estate Agent."
+  title="GTA Neighbourhood Profiles | Cory Wong, Real Estate Agent"
+  description="Explore Greater Toronto Area neighbourhoods. Community profiles, market data, and local insights from Cory Wong, Real Estate Agent, Trustwell Realty Inc., Brokerage."
   canonicalPath="/neighbourhoods"
 >
   <section class="page-hero">
@@ -19,25 +18,35 @@ import NewsletterSignup from '../../../components/NewsletterSignup.astro';
     </div>
   </section>
 
-  <section class="coming-soon">
+  <section class="profiles-grid">
     <div class="container">
-      <div class="coming-soon__card">
-        <h2>Neighbourhood profiles are coming soon</h2>
-        <p>
-          I'm building in-depth profiles for key neighbourhoods in Toronto, Markham,
-          Richmond Hill, and across the GTA. Each profile will include market data,
-          schools, transit, amenities, and local insights.
-        </p>
-        <p>
-          Looking for information about a specific neighbourhood? Get in touch and I'll
-          share what I know.
-        </p>
-        <CtaButton href="/contact" label="Ask About a Neighbourhood" variant="primary" />
+      <div class="profiles">
+        <a href="/neighbourhoods/markham" class="profile-card">
+          <h2>Markham</h2>
+          <p>
+            Distinct communities from Unionville to Cornell. Strong schools, good transit,
+            and a range of housing types at prices accessible compared to Toronto proper.
+          </p>
+        </a>
+        <a href="/neighbourhoods/richmond-hill" class="profile-card">
+          <h2>Richmond Hill</h2>
+          <p>
+            A family market between Toronto and Newmarket. Strong schools, good parks, and
+            property values supported by the Oak Ridges Moraine boundary.
+          </p>
+        </a>
+        <a href="/neighbourhoods/north-york" class="profile-card">
+          <h2>North York</h2>
+          <p>
+            Geographically central with strong TTC coverage. From Willowdale condos to
+            Bayview Village detached homes — options for first-time and move-up buyers.
+          </p>
+        </a>
       </div>
     </div>
   </section>
 
-  <NewsletterSignup />
+  <NewsletterSignup heading="Get GTA Market Updates" />
 </RealestateLayout>
 
 <style>
@@ -61,29 +70,43 @@ import NewsletterSignup from '../../../components/NewsletterSignup.astro';
     line-height: 1.6;
   }
 
-  .coming-soon {
-    padding: var(--space-xl) 0 var(--space-2xl);
+  .profiles-grid {
+    padding: 0 0 var(--space-2xl);
   }
 
-  .coming-soon__card {
-    max-width: 32rem;
+  .profiles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--space-md);
+    max-width: 54rem;
     margin: 0 auto;
-    text-align: center;
-    padding: var(--space-xl);
-    background: #f5f5f4;
-    border-radius: 12px;
-    border: 1px solid var(--color-border);
   }
 
-  .coming-soon__card h2 {
+  .profile-card {
+    display: block;
+    background: var(--color-surface);
+    border-radius: 8px;
+    padding: var(--space-lg);
+    text-decoration: none;
+    border: 1px solid var(--color-border);
+    transition: box-shadow 0.15s ease, border-color 0.15s ease;
+  }
+
+  .profile-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  }
+
+  .profile-card h2 {
     font-size: 1.25rem;
     font-weight: 600;
-    margin-bottom: var(--space-md);
+    color: var(--color-text);
+    margin-bottom: var(--space-sm);
   }
 
-  .coming-soon__card p {
+  .profile-card p {
+    font-size: 0.9375rem;
     color: var(--color-text-muted);
     line-height: 1.6;
-    margin-bottom: var(--space-md);
   }
 </style>

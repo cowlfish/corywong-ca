@@ -1,0 +1,217 @@
+---
+import RealestateLayout from '../../../layouts/RealestateLayout.astro';
+import CtaButton from '../../../components/CtaButton.astro';
+import NewsletterSignup from '../../../components/NewsletterSignup.astro';
+---
+
+<RealestateLayout
+  title="Markham Real Estate | Neighbourhood Profile | Cory Wong, Real Estate Agent"
+  description="Markham real estate neighbourhood profile: housing types, price ranges, schools, transit, and market insights from Cory Wong, Real Estate Agent, Trustwell Realty Inc., Brokerage."
+  canonicalPath="/neighbourhoods/markham"
+>
+  <section class="page-hero">
+    <div class="container">
+      <h1>Markham Real Estate: A Neighbourhood Profile</h1>
+      <p class="page-hero__subtitle">
+        Cory Wong, Real Estate Agent | Trustwell Realty Inc., Brokerage
+      </p>
+    </div>
+  </section>
+
+  <article class="profile">
+    <div class="container">
+      <div class="profile__content">
+        <p class="profile__intro">
+          Markham is one of the most sought-after communities in the Greater Toronto Area. It
+          offers what many GTA buyers are looking for: space, strong schools, good transit
+          connections, and a range of housing types at prices that remain accessible compared
+          to Toronto proper.
+        </p>
+
+        <h2>Character and Feel</h2>
+        <p>
+          Markham is a city of distinct communities. Cornell, Unionville, Markham Village,
+          Berczy Village, and Cathedraltown each have their own feel and price range.
+        </p>
+        <p>
+          Unionville draws buyers who want heritage character and a walkable main street.
+          Cornell and Berczy Village are newer, master-planned communities with modern detached
+          and semi-detached homes. Markham Village is established, with mature trees and
+          proximity to historic downtown Markham.
+        </p>
+        <p>
+          The city has a large and active East Asian community. There's a strong local food
+          scene, well-regarded schools, and a range of community organizations.
+        </p>
+
+        <h2>Who Buys in Markham</h2>
+        <p>
+          The typical buyer in Markham is a move-up buyer or a first-time buyer choosing space
+          over proximity to downtown Toronto. Families prioritize Markham for its schools,
+          particularly at the secondary level. First-time buyers are drawn by the price
+          difference from inner Toronto. Investors buy here for long-term rental demand driven
+          by York University, Seneca at York, and steady job growth in the technology corridor
+          along Highway 7.
+        </p>
+
+        <h2>Housing Types and Price Ranges</h2>
+        <ul class="price-list">
+          <li><strong>Detached homes:</strong> approximately $1.1M to $2.5M, depending on location and size</li>
+          <li><strong>Semi-detached homes:</strong> $900K to $1.3M in most areas</li>
+          <li><strong>Freehold townhomes:</strong> $750K to $1.1M</li>
+          <li><strong>Condos (near Highway 7):</strong> from approximately $550K</li>
+        </ul>
+        <p>Unionville and Angus Glen carry premiums. Cornell and Cathedraltown are priced more accessibly.</p>
+        <p class="profile__disclaimer">
+          These are general estimates based on market activity in early 2026. Actual prices vary
+          by property. Speak with Cory for a current assessment.
+        </p>
+
+        <h2>Transit and Highways</h2>
+        <p>
+          Markham is accessible via the 404/DVP corridor and Highway 407. The Stouffville GO
+          line serves Unionville, Mount Joy, and Markham stations, with trains to Union Station
+          in under an hour during peak hours. York Region Transit connects to TTC subway at
+          Finch and Sheppard stations.
+        </p>
+        <p>
+          For buyers who drive, Markham offers straightforward access to Highway 401 and
+          downtown Toronto.
+        </p>
+
+        <h2>Amenities and Schools</h2>
+        <p>
+          Pacific Mall, the largest indoor Asian mall in North America, is a community hub.
+          First Markham Place, Markville Mall, and smaller retail strips cover daily needs.
+        </p>
+        <p>
+          Top-rated public secondary schools include Unionville High School and Milliken Mills
+          High School. The York Catholic District School Board serves Catholic families.
+        </p>
+
+        <h2>Real Estate Perspective</h2>
+        <p>
+          Markham has held its value through the GTA market correction better than many areas.
+          Demand from move-up buyers and investors remains steady. Active listings have increased
+          in 2025 and 2026, giving buyers more choice than in previous years. Correctly-priced
+          homes in good condition are still moving.
+        </p>
+        <p>
+          If you're buying in Markham, work with an agent who knows the individual communities.
+          Prices and conditions differ significantly between Unionville and the condo market
+          near Highway 7.
+        </p>
+
+        <div class="profile__cta">
+          <CtaButton href="/contact" label="Book a Consultation" variant="primary" />
+        </div>
+
+        <p class="profile__compliance">
+          Cory Wong, Real Estate Agent. Real estate services provided through Trustwell Realty
+          Inc., Brokerage.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <NewsletterSignup heading="Get GTA Market Updates" />
+</RealestateLayout>
+
+<style>
+  .page-hero {
+    padding: var(--space-2xl) 0 var(--space-xl);
+    text-align: center;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-md);
+  }
+
+  .page-hero__subtitle {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  .profile {
+    padding: 0 0 var(--space-xl);
+  }
+
+  .profile__content {
+    max-width: 36rem;
+    margin: 0 auto;
+  }
+
+  .profile__intro {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .profile__content h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+  }
+
+  .profile__content p {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: var(--space-md);
+  }
+
+  .price-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+  }
+
+  .price-list li {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .price-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 8px;
+    height: 8px;
+    background: var(--color-accent);
+    border-radius: 50%;
+  }
+
+  .profile__disclaimer {
+    font-size: 0.8125rem !important;
+    font-style: italic;
+    opacity: 0.8;
+  }
+
+  .profile__cta {
+    text-align: center;
+    margin: var(--space-xl) 0;
+  }
+
+  .profile__compliance {
+    font-size: 0.8125rem !important;
+    opacity: 0.7;
+    font-style: italic;
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-md);
+    margin-top: var(--space-xl);
+  }
+</style>

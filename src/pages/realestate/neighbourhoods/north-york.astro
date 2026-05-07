@@ -1,0 +1,219 @@
+---
+import RealestateLayout from '../../../layouts/RealestateLayout.astro';
+import CtaButton from '../../../components/CtaButton.astro';
+import NewsletterSignup from '../../../components/NewsletterSignup.astro';
+---
+
+<RealestateLayout
+  title="North York Real Estate | Neighbourhood Profile | Cory Wong, Real Estate Agent"
+  description="North York real estate neighbourhood profile: housing types, price ranges, schools, transit, and market insights from Cory Wong, Real Estate Agent, Trustwell Realty Inc., Brokerage."
+  canonicalPath="/neighbourhoods/north-york"
+>
+  <section class="page-hero">
+    <div class="container">
+      <h1>North York Real Estate: A Neighbourhood Profile</h1>
+      <p class="page-hero__subtitle">
+        Cory Wong, Real Estate Agent | Trustwell Realty Inc., Brokerage
+      </p>
+    </div>
+  </section>
+
+  <article class="profile">
+    <div class="container">
+      <div class="profile__content">
+        <p class="profile__intro">
+          North York is where a significant portion of GTA first-time and move-up buying
+          activity occurs. It's geographically central, well-served by the TTC, and offers
+          more housing options at more accessible prices than the central Toronto core. Buyers
+          priced out of the Annex or Riverdale often find a path to homeownership here without
+          leaving the city.
+        </p>
+
+        <h2>Character and Feel</h2>
+        <p>
+          North York is not a single neighbourhood. It's a large district that includes
+          Willowdale, Bayview Village, Bathurst Manor, Don Mills, Lawrence Manor, Wilson
+          Heights, and others. Each has its own character and price point.
+        </p>
+        <p>
+          Willowdale (centred around Yonge and Sheppard) is the urban core of North York, with
+          high-rise condos, restaurants, and a dense retail district. Don Mills is quieter and
+          suburban, with more detached homes and proximity to the Shops at Don Mills. Bayview
+          Village is upscale, with larger lots and mature trees. Lawrence Manor and Bathurst
+          Manor are established communities with strong neighbourhood ties.
+        </p>
+
+        <h2>Who Buys in North York</h2>
+        <p>
+          First-time buyers are active in the Willowdale condo market and in the more accessible
+          pockets of Wilson Heights and Lawrence Manor. Move-up buyers seek detached homes in
+          Bayview Village and Don Mills. Investors buy condos near Sheppard and Yonge for the
+          rental demand from Seneca College's Newnham campus and the surrounding employment base.
+        </p>
+
+        <h2>Housing Types and Price Ranges</h2>
+        <ul class="price-list">
+          <li><strong>Condo apartments in Willowdale and along the Sheppard corridor:</strong> approximately $500K for a one-bedroom to $1.1M for larger two-bedrooms and dens</li>
+          <li><strong>Detached homes in Lawrence Manor and Bathurst Manor:</strong> approximately $1.2M to $1.7M</li>
+          <li><strong>Detached homes in Bayview Village and Willowdale:</strong> approximately $1.8M to $3M and above</li>
+          <li><strong>Freehold townhomes near Yonge-Sheppard and in Don Mills:</strong> approximately $1.1M to $1.6M</li>
+        </ul>
+        <p class="profile__disclaimer">
+          These are general estimates from early 2026. Cory will give you a specific assessment.
+        </p>
+
+        <h2>Transit and TTC Access</h2>
+        <p>
+          North York has strong TTC coverage. Line 1 (Yonge-University) runs the full length of
+          the district, with stations at Sheppard, Bessarion, Leslie, Bayview, and Finch. Line 4
+          (Sheppard) connects Sheppard-Yonge to Don Mills. TTC bus routes fill the gaps.
+        </p>
+        <p>
+          Residents without a car commute effectively from most parts of North York. The subway
+          puts downtown Toronto 20 to 35 minutes away.
+        </p>
+
+        <h2>Amenities and Schools</h2>
+        <p>
+          The North York Civic Centre area includes the Toronto Public Library's North York
+          branch, Mel Lastman Square, and retail. Fairview Mall and Yorkdale, just south of the
+          district boundary, are the main shopping centres. The Aga Khan Museum and Ismaili
+          Centre in Don Mills are notable cultural institutions.
+        </p>
+        <p>
+          Public secondary schools include Earl Haig Secondary School (strong arts program) and
+          AY Jackson Secondary School. The Toronto Catholic District School Board serves Catholic
+          families in the district.
+        </p>
+
+        <h2>Real Estate Perspective</h2>
+        <p>
+          North York's condo market has softened in 2025 and 2026, in line with the broader
+          Toronto condo correction. Active listings are up and sales-to-list ratios have come in.
+          For buyers, this creates negotiating room that didn't exist during the 2021-2022 peak.
+          For sellers, pricing realistically from the start is the right approach.
+        </p>
+        <p>
+          The detached and freehold townhome market in North York is less affected by the condo
+          softness. Demand for family-sized homes near good schools in established neighbourhoods
+          has held steady.
+        </p>
+        <p>
+          Which sub-area fits depends on your priorities. Condos near Sheppard-Yonge suit buyers
+          who want walkability and transit. Family-sized homes in Don Mills or Bayview Village
+          suit buyers willing to trade a longer commute for space.
+        </p>
+
+        <div class="profile__cta">
+          <CtaButton href="/contact" label="Book a Consultation" variant="primary" />
+        </div>
+
+        <p class="profile__compliance">
+          Cory Wong, Real Estate Agent. Real estate services provided through Trustwell Realty
+          Inc., Brokerage.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <NewsletterSignup heading="Get GTA Market Updates" />
+</RealestateLayout>
+
+<style>
+  .page-hero {
+    padding: var(--space-2xl) 0 var(--space-xl);
+    text-align: center;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-md);
+  }
+
+  .page-hero__subtitle {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  .profile {
+    padding: 0 0 var(--space-xl);
+  }
+
+  .profile__content {
+    max-width: 36rem;
+    margin: 0 auto;
+  }
+
+  .profile__intro {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+    padding-bottom: var(--space-md);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .profile__content h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-top: var(--space-lg);
+    margin-bottom: var(--space-sm);
+  }
+
+  .profile__content p {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: var(--space-md);
+  }
+
+  .price-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md);
+  }
+
+  .price-list li {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    padding-left: 1.5rem;
+    position: relative;
+  }
+
+  .price-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.5rem;
+    width: 8px;
+    height: 8px;
+    background: var(--color-accent);
+    border-radius: 50%;
+  }
+
+  .profile__disclaimer {
+    font-size: 0.8125rem !important;
+    font-style: italic;
+    opacity: 0.8;
+  }
+
+  .profile__cta {
+    text-align: center;
+    margin: var(--space-xl) 0;
+  }
+
+  .profile__compliance {
+    font-size: 0.8125rem !important;
+    opacity: 0.7;
+    font-style: italic;
+    border-top: 1px solid var(--color-border);
+    padding-top: var(--space-md);
+    margin-top: var(--space-xl);
+  }
+</style>
