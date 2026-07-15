@@ -1,37 +1,18 @@
 ---
 title: "About"
-description: "A bit about me and this blog."
+description: "Cory Wong — real estate broker in Toronto."
 ---
 
-AstroPaper is a minimal, accessible and SEO-friendly blog theme built with [Astro](https://astro.build/) and [Tailwind CSS](https://tailwindcss.com/).
+I'm a real estate broker in Toronto, working through Trustwell Realty Inc., Brokerage. I focus on understanding what you need before anything else — whether you're buying your first place or selling after decades.
 
-![Astro Paper](@/assets/images/astropaper-og.jpg)
+Outside of real estate, I write about fitness and technology. The newsletter covers all three, sent when there's something worth saying.
 
-AstroPaper provides a solid foundation for blogs, or even portfolios\_ with full markdown support, built-in dark mode, and a clean layout that works out-of-the-box.
+## Real Estate
 
-The blog posts in this theme also serve as guides, docs or example articles\_ making AstroPaper a flexible starting point for your next content-driven site.
+I work with buyers and sellers across Toronto. No pressure, no hustle — just honest advice and attention to what actually matters to you.
 
-## Features
+If you're thinking about buying or selling, start with the [portal](https://portal.corywong.ca) or reach out through [realestate.corywong.ca](https://realestate.corywong.ca).
 
-AstroPaper comes with a set of useful features that make content publishing easy and effective:
+## The Newsletter
 
-- SEO-friendly
-- Fast performance
-- Light & dark mode
-- Highly customizable
-- Organizable blog posts
-- Responsive & accessible
-- Static search with [PageFind](https://pagefind.app/)
-- Automatic social image generation
-
-and so much more.
-
-## Show your support
-
-If you like [AstroPaper](https://github.com/satnaing/astro-paper), consider giving it a star ⭐️.
-
-Found a bug 🐛 or have an improvement ✨ in mind? Feel free to open an [issue](https://github.com/satnaing/astro-paper/issues), submit a [pull request](https://github.com/satnaing/astro-paper/pulls) or start a [discussion](https://github.com/satnaing/astro-paper/discussions).
-
-If you find this theme helpful, you can also [sponsor me on GitHub](https://github.com/sponsors/satnaing) or [buy me a coffee](https://buymeacoffee.com/satnaing) to show your support — every penny counts.
-
-Kyay zuu! 🙏🏼
+I send a newsletter covering real estate, training, and technology. No fixed schedule — only when there's something worth your time. Subscribe from the [home page](/).

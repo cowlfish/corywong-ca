@@ -60,13 +60,22 @@ export default defineConfig({
   },
   fonts: [
     {
-      name: "Google Sans Code",
-      cssVariable: "--font-google-sans-code",
+      name: "Inter",
+      cssVariable: "--font-inter",
       provider: fontProviders.google(),
-      fallbacks: ["monospace"],
-      weights: [300, 400, 500, 600, 700],
+      fallbacks: ["system-ui", "sans-serif"],
+      weights: [400, 500, 600],
+      styles: ["normal"],
+      formats: ["woff2", "ttf"],
+    },
+    {
+      name: "Lora",
+      cssVariable: "--font-lora",
+      provider: fontProviders.google(),
+      fallbacks: ["Georgia", "serif"],
+      weights: [400, 500, 700],
       styles: ["normal", "italic"],
-      formats: ["woff", "ttf"],
+      formats: ["woff2"],
     },
   ],
   env: {

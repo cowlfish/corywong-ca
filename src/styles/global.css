@@ -3,8 +3,6 @@
 @import "./typography.css";
 @import "rehype-callouts/theme/obsidian";
 
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
-
 @layer base {
   * {
     @apply border-border outline-accent/75;
@@ -22,15 +20,23 @@
 }
 
 @utility max-w-app {
-  @apply max-w-3xl;
+  max-width: 640px;
+}
+
+@utility max-w-article {
+  max-width: 700px;
 }
 
 @utility app-layout {
   @apply max-w-app mx-auto w-full px-4;
 }
 
+@utility article-layout {
+  @apply max-w-article mx-auto w-full px-4;
+}
+
 @utility active-nav {
-  @apply underline decoration-wavy decoration-2 underline-offset-8;
+  @apply underline decoration-1 underline-offset-8;
 }
 
 :target {

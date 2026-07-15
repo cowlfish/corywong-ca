@@ -2,7 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import { getPostUrl } from "@/utils/getPostPaths";
 import { toTransitionName } from "@/utils/toTransitionName";
-import Datetime from "./Datetime.astro";
+import dayjs from "dayjs";
 
 type Props = {
   variant?: "h2" | "h3";
@@ -10,22 +10,26 @@ type Props = {
 
 const { variant: Heading = "h2", id, data, filePath } = Astro.props;
 
-const { title, description, ...props } = data;
+const { title, description, pubDatetime } = data;
+const formattedDate = dayjs(pubDatetime).format("MMMM D, YYYY");
 ---
 
-<li class="my-6">
+<li class="border-border border-b py-6 last:border-b-0">
   <a
     href={getPostUrl(id, filePath, Astro.currentLocale)}
     class:list={[
-      "text-accent inline-block text-lg font-medium",
-      "decoration-dashed underline-offset-4 hover:underline",
+      "text-foreground inline-block text-lg font-medium",
+      "underline-offset-4 hover:underline",
       "focus-visible:no-underline focus-visible:underline-offset-0",
     ]}
+    style="font-family: var(--font-app); letter-spacing: -0.01em;"
   >
     <Heading transition:name={toTransitionName(title)}>
       {title}
     </Heading>
   </a>
-  <Datetime {...props} />
-  <p>{description}</p>
+  <p class="text-muted-foreground mt-1 text-xs font-medium uppercase tracking-widest">
+    {formattedDate}
+  </p>
+  <p class="text-foreground/80 mt-2 text-sm leading-relaxed">{description}</p>
 </li>
