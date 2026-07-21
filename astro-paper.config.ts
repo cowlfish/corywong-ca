@@ -5,7 +5,7 @@ export default defineAstroPaperConfig({
     url: "https://corywong.ca/",
     title: "Cory Wong",
     description:
-      "Cory Wong — real estate broker in Toronto. Writing about real estate, fitness, and tech.",
+      "Cory Wong — writing about fitness, technology, and things worth paying attention to.",
     author: "Cory Wong",
     profile: "https://corywong.ca",
     ogImage: "default-og.jpg",
