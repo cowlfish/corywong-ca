@@ -3,6 +3,23 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "installCommand": "npm install",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "realestate.corywong.ca" }],
+      "destination": "/realestate/$1"
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "re.corywong.ca" }],
+      "destination": "/realestate/$1"
+    },
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "portal.corywong.ca" }],
+      "destination": "/portal"
+    }
+  ],
   "redirects": [
     {
       "source": "/(.*)",

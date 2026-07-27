@@ -1,0 +1,390 @@
+---
+import Layout from '../../../layouts/RealestateLayout.astro';
+---
+
+<Layout
+  title="Buyer & Seller Resources | Cory Wong, Real Estate Agent | Trustwell Realty"
+  description="Free guides, market reports, and neighbourhood profiles for GTA home buyers and sellers. Educational resources from Cory Wong, Real Estate Agent."
+  canonicalPath="/resources"
+>
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero__title">Buyer &amp; Seller Resources</h1>
+      <p class="page-hero__subtitle">
+        Practical guides and educational content to help you make informed real estate
+        decisions across the Greater Toronto Area.
+      </p>
+    </div>
+  </section>
+
+  <!-- Guides -->
+  <section class="resources-section">
+    <div class="container">
+      <h2 class="resources-section__title">Guides</h2>
+      <div class="resource-grid">
+        <a href="/resources/buyer-guide" class="resource-card">
+          <span class="resource-card__type">Guide</span>
+          <h3 class="resource-card__title">The GTA Home Buyer's Guide</h3>
+          <p class="resource-card__desc">
+            Everything you need to know before buying a home in the GTA &mdash; from
+            getting pre-approved and understanding the stress test, to the offer process,
+            due diligence, and closing costs.
+          </p>
+          <span class="resource-card__link">Read the guide &rarr;</span>
+        </a>
+        <a href="/resources/seller-guide" class="resource-card">
+          <span class="resource-card__type">Guide</span>
+          <h3 class="resource-card__title">The GTA Home Seller's Guide</h3>
+          <p class="resource-card__desc">
+            A step-by-step walkthrough of the selling process &mdash; preparation, pricing
+            strategy, marketing, navigating offers, and what to expect at closing.
+          </p>
+          <span class="resource-card__link">Read the guide &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Market Insights -->
+  <section class="resources-section">
+    <div class="container">
+      <h2 class="resources-section__title">Market Insights</h2>
+      <div class="resource-grid">
+        <a href="/market-updates" class="resource-card">
+          <span class="resource-card__type">Monthly Report</span>
+          <h3 class="resource-card__title">GTA Market Updates</h3>
+          <p class="resource-card__desc">
+            Monthly analysis of sales trends, inventory levels, pricing data, and what
+            it all means for buyers and sellers across Toronto, Markham, and Richmond Hill.
+          </p>
+          <span class="resource-card__link">View latest update &rarr;</span>
+        </a>
+        <a href="/neighbourhoods" class="resource-card">
+          <span class="resource-card__type">Profiles</span>
+          <h3 class="resource-card__title">Neighbourhood Profiles</h3>
+          <p class="resource-card__desc">
+            Detailed profiles of GTA neighbourhoods covering character, housing types,
+            price ranges, transit, schools, and real estate market perspective.
+          </p>
+          <span class="resource-card__link">Explore neighbourhoods &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Card -->
+  <section class="cta-section">
+    <div class="container content-narrow">
+      <div class="cta-card">
+        <h2 class="cta-card__title">Have a Question These Guides Don't Answer?</h2>
+        <p class="cta-card__text">
+          Every situation is different. If you have a specific question about buying or
+          selling in the GTA, book a no-obligation consultation and get advice tailored
+          to your circumstances.
+        </p>
+        <a href="/contact" class="cta cta--primary">Book a Consultation</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container content-narrow">
+      <h2 class="newsletter__heading">Stay Informed</h2>
+      <p class="newsletter__text">
+        Get monthly market data, neighbourhood insights, and practical advice for buyers
+        and sellers across the Greater Toronto Area.
+      </p>
+      <form id="newsletter-form" class="newsletter__form" novalidate>
+        <input
+          type="email"
+          id="newsletter-email"
+          name="email"
+          placeholder="you@example.com"
+          required
+          autocomplete="email"
+          class="newsletter__input"
+        />
+        <button type="submit" class="cta cta--primary newsletter__btn">Subscribe</button>
+      </form>
+      <p id="newsletter-form-status" class="form-status" aria-live="polite"></p>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const newsletterForm = document.getElementById('newsletter-form') as HTMLFormElement | null;
+  const newsletterStatus = document.getElementById('newsletter-form-status');
+
+  if (newsletterForm && newsletterStatus) {
+    newsletterForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      newsletterStatus.textContent = '';
+      newsletterStatus.className = 'form-status';
+
+      const formData = new FormData(newsletterForm);
+      const payload = {
+        type: 'newsletter',
+        email: formData.get('email'),
+      };
+
+      try {
+        const res = await fetch('/api/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        if (res.ok) {
+          newsletterStatus.textContent = 'You\'re subscribed! Watch your inbox for the next report.';
+          newsletterStatus.classList.add('form-status--success');
+          newsletterForm.reset();
+        } else {
+          throw new Error('Request failed');
+        }
+      } catch {
+        newsletterStatus.textContent = 'Something went wrong. Please try again.';
+        newsletterStatus.classList.add('form-status--error');
+      }
+    });
+  }
+</script>
+
+<style>
+  .content-narrow {
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Page Hero */
+  .page-hero {
+    padding: var(--space-2xl) 0 var(--space-xl);
+    text-align: center;
+  }
+
+  .page-hero__title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-md);
+  }
+
+  .page-hero__subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    max-width: 36rem;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* Resources Sections */
+  .resources-section {
+    padding-bottom: var(--space-2xl);
+  }
+
+  .resources-section__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: var(--space-lg);
+    letter-spacing: -0.01em;
+  }
+
+  .resource-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+
+  /* Resource Cards */
+  .resource-card {
+    display: block;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    padding: var(--space-lg);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .resource-card:hover {
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border-color: var(--color-accent);
+  }
+
+  .resource-card__type {
+    display: inline-block;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+    margin-bottom: var(--space-sm);
+  }
+
+  .resource-card__title {
+    font-size: 1.0625rem;
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+    line-height: 1.3;
+  }
+
+  .resource-card__desc {
+    font-size: 0.875rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+  }
+
+  .resource-card__link {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-accent);
+  }
+
+  .resource-card:hover .resource-card__link {
+    color: var(--color-accent-hover);
+  }
+
+  /* CTA Section */
+  .cta-section {
+    padding-bottom: var(--space-2xl);
+  }
+
+  .cta-card {
+    background: #f5f5f4;
+    border-radius: 8px;
+    padding: var(--space-xl);
+    text-align: center;
+  }
+
+  .cta-card__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+  }
+
+  .cta-card__text {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+    max-width: 30rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    white-space: nowrap;
+  }
+
+  .cta--primary {
+    background: var(--color-accent);
+    color: #ffffff;
+  }
+
+  .cta--primary:hover {
+    background: var(--color-accent-hover);
+    color: #ffffff;
+  }
+
+  /* Newsletter */
+  .newsletter {
+    padding: var(--space-2xl) 0;
+    background: var(--color-accent);
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .newsletter__heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+    color: #ffffff;
+  }
+
+  .newsletter__text {
+    font-size: 0.9375rem;
+    opacity: 0.9;
+    margin-bottom: var(--space-lg);
+    line-height: 1.7;
+  }
+
+  .newsletter__form {
+    display: flex;
+    gap: var(--space-sm);
+    max-width: 28rem;
+    margin: 0 auto;
+  }
+
+  .newsletter__input {
+    flex: 1;
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+  }
+
+  .newsletter__input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .newsletter__input:focus {
+    outline: none;
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  .newsletter__btn {
+    flex-shrink: 0;
+    border: 1px solid #ffffff;
+    background: #ffffff;
+    color: var(--color-accent);
+    cursor: pointer;
+    font-family: var(--font-sans);
+  }
+
+  .newsletter__btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--color-accent);
+  }
+
+  .form-status {
+    margin-top: var(--space-md);
+    font-size: 0.875rem;
+    min-height: 1.25rem;
+  }
+
+  .newsletter .form-status--success {
+    color: #ffffff;
+    opacity: 0.9;
+  }
+
+  .newsletter .form-status--error {
+    color: #fecaca;
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .resource-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .newsletter__form {
+      flex-direction: column;
+    }
+  }
+</style>

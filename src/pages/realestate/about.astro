@@ -1,0 +1,237 @@
+---
+import Layout from '../../layouts/RealestateLayout.astro';
+---
+
+<Layout
+  title="About Cory Wong | Real Estate Agent | Trustwell Realty Inc., Brokerage"
+  description="Cory Wong is a Real Estate Agent with Trustwell Realty Inc., Brokerage, serving Toronto, Markham, and Richmond Hill. Learn about his approach to client service."
+  canonicalPath="/about"
+>
+  <!-- About Hero -->
+  <section class="about-hero">
+    <div class="container">
+      <div class="about-hero__inner">
+        <img
+          src="/headshot.jpg"
+          alt="Cory Wong, Real Estate Agent"
+          class="about-hero__photo"
+          width="280"
+          height="280"
+        />
+        <div class="about-hero__intro">
+          <h1 class="about-hero__name">About Cory Wong</h1>
+          <p class="about-hero__subtitle">Real Estate Agent</p>
+          <p class="about-hero__brokerage">Trustwell Realty Inc., Brokerage</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bio Content -->
+  <section class="bio">
+    <div class="container content-narrow">
+      <p class="bio__text">
+        I work in real estate because it suits how I think and what I'm good at. Buying or
+        selling a home is one of the biggest financial decisions most people make. It deserves
+        clear thinking, honest communication, and someone who takes the details seriously.
+      </p>
+      <p class="bio__text">
+        I'm licensed with Trustwell Realty Inc., Brokerage, and I focus on Toronto, Markham,
+        and Richmond Hill. I also serve clients across York Region, Peel Region, and Durham
+        Region.
+      </p>
+      <p class="bio__text">
+        Before real estate, I worked as a professional writer and spent years as a
+        Toastmaster. That background shapes how I communicate with clients &mdash; clearly,
+        concisely, and without jargon. Whether it's a market update, a pricing
+        recommendation, or an offer negotiation, I make sure you understand what's happening
+        and why.
+      </p>
+      <p class="bio__text">
+        I'd rather show than tell. That means regular updates instead of silence, honest
+        assessments instead of inflated promises, data-driven pricing instead of guesswork,
+        and prepared negotiation instead of winging it. You'll always know where you stand.
+      </p>
+      <p class="bio__text">
+        The GTA market is not simple right now. Rates, inventory, and buyer sentiment shift
+        from month to month. My job is to cut through the noise, give you the information
+        that actually matters for your situation, and help you make confident decisions.
+      </p>
+      <p class="bio__text">
+        If you're thinking about buying or selling, I'd be happy to have a conversation.
+        No pressure, no pitch &mdash; just an honest look at your options.
+      </p>
+
+      <!-- Service Areas -->
+      <div class="service-areas">
+        <h2 class="section-heading">Service Areas</h2>
+        <div class="service-areas__content">
+          <div class="service-area">
+            <h3 class="service-area__label">Primary</h3>
+            <p class="service-area__text">Toronto, Markham, Richmond Hill</p>
+          </div>
+          <div class="service-area">
+            <h3 class="service-area__label">Additional</h3>
+            <p class="service-area__text">York Region, Peel Region, Durham Region</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="about-cta">
+        <a href="/contact" class="cta cta--primary">Book a Consultation</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Content width */
+  .content-narrow {
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Section Heading */
+  .section-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: var(--space-lg);
+  }
+
+  /* About Hero */
+  .about-hero {
+    padding: var(--space-2xl) 0 var(--space-xl);
+  }
+
+  .about-hero__inner {
+    display: flex;
+    align-items: center;
+    gap: var(--space-xl);
+    max-width: 36rem;
+    margin: 0 auto;
+  }
+
+  .about-hero__photo {
+    width: 280px;
+    height: 280px;
+    border-radius: 12px;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .about-hero__intro {
+    flex: 1;
+  }
+
+  .about-hero__name {
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-xs);
+  }
+
+  .about-hero__subtitle {
+    font-size: 1.125rem;
+    color: var(--color-accent);
+    font-weight: 600;
+    margin-bottom: var(--space-xs);
+  }
+
+  .about-hero__brokerage {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+  }
+
+  /* Bio */
+  .bio {
+    padding: 0 0 var(--space-2xl);
+  }
+
+  .bio__text {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+  }
+
+  /* Service Areas */
+  .service-areas {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .service-areas__content {
+    display: flex;
+    gap: var(--space-xl);
+  }
+
+  .service-area__label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-accent);
+    margin-bottom: var(--space-xs);
+  }
+
+  .service-area__text {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+  }
+
+  /* CTA */
+  .about-cta {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cta {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    white-space: nowrap;
+  }
+
+  .cta--primary {
+    background: var(--color-accent);
+    color: #ffffff;
+  }
+
+  .cta--primary:hover {
+    background: var(--color-accent-hover);
+    color: #ffffff;
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .about-hero__inner {
+      flex-direction: column;
+      text-align: center;
+    }
+
+    .about-hero__photo {
+      width: 200px;
+      height: 200px;
+    }
+
+    .service-areas__content {
+      flex-direction: column;
+      gap: var(--space-lg);
+    }
+
+    .about-cta {
+      text-align: center;
+    }
+  }
+</style>

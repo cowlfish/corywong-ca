@@ -1,0 +1,319 @@
+---
+import Layout from '../../../layouts/RealestateLayout.astro';
+---
+
+<Layout
+  title="GTA Neighbourhood Profiles | Cory Wong, Real Estate Agent"
+  description="Explore neighbourhood profiles for Toronto, Markham, Richmond Hill, and North York. Housing types, price ranges, transit, schools, and local insights from Cory Wong."
+  canonicalPath="/neighbourhoods"
+>
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero__title">GTA Neighbourhood Profiles</h1>
+      <p class="page-hero__subtitle">
+        Understand the character, housing options, and market dynamics of neighbourhoods
+        across the Greater Toronto Area. Each profile covers what you need to know before
+        buying or selling in that area.
+      </p>
+    </div>
+  </section>
+
+  <!-- Neighbourhood Grid -->
+  <section class="neighbourhoods">
+    <div class="container">
+      <div class="neighbourhoods__grid">
+        <a href="/neighbourhoods/toronto" class="neighbourhood-card">
+          <h2 class="neighbourhood-card__title">Toronto</h2>
+          <p class="neighbourhood-card__text">
+            From downtown condos to east-end semis, Toronto is the GTA's most segmented
+            market. Each pocket has its own character, price range, and buyer profile.
+          </p>
+          <span class="neighbourhood-card__link">View profile &rarr;</span>
+        </a>
+
+        <a href="/neighbourhoods/markham" class="neighbourhood-card">
+          <h2 class="neighbourhood-card__title">Markham</h2>
+          <p class="neighbourhood-card__text">
+            Distinct communities with strong schools and accessible price points relative to
+            Toronto. A top choice for families moving up from the city.
+          </p>
+          <span class="neighbourhood-card__link">View profile &rarr;</span>
+        </a>
+
+        <a href="/neighbourhoods/richmond-hill" class="neighbourhood-card">
+          <h2 class="neighbourhood-card__title">Richmond Hill</h2>
+          <p class="neighbourhood-card__text">
+            A family-oriented market with strong schools and proximity to both Toronto and
+            cottage country. The Oak Ridges Moraine boundary limits northern growth and
+            supports long-term values.
+          </p>
+          <span class="neighbourhood-card__link">View profile &rarr;</span>
+        </a>
+
+        <a href="/neighbourhoods/north-york" class="neighbourhood-card">
+          <h2 class="neighbourhood-card__title">North York</h2>
+          <p class="neighbourhood-card__text">
+            Geographically central with strong TTC coverage, spanning from Willowdale to
+            Bayview Village. A bridge between downtown Toronto and the 905.
+          </p>
+          <span class="neighbourhood-card__link">View profile &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container content-narrow">
+      <h2 class="newsletter__heading">Stay Informed</h2>
+      <p class="newsletter__text">
+        Get monthly market data, neighbourhood insights, and practical advice for buyers
+        and sellers across the Greater Toronto Area.
+      </p>
+      <form id="newsletter-form" class="newsletter__form" novalidate>
+        <input
+          type="email"
+          id="newsletter-email"
+          name="email"
+          placeholder="you@example.com"
+          required
+          autocomplete="email"
+          class="newsletter__input"
+        />
+        <button type="submit" class="cta cta--primary newsletter__btn">Subscribe</button>
+      </form>
+      <p id="newsletter-form-status" class="form-status" aria-live="polite"></p>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const newsletterForm = document.getElementById('newsletter-form') as HTMLFormElement | null;
+  const newsletterStatus = document.getElementById('newsletter-form-status');
+
+  if (newsletterForm && newsletterStatus) {
+    newsletterForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      newsletterStatus.textContent = '';
+      newsletterStatus.className = 'form-status';
+
+      const formData = new FormData(newsletterForm);
+      const payload = {
+        type: 'newsletter',
+        email: formData.get('email'),
+      };
+
+      try {
+        const res = await fetch('/api/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        if (res.ok) {
+          newsletterStatus.textContent = 'You\'re subscribed! Watch your inbox for the next report.';
+          newsletterStatus.classList.add('form-status--success');
+          newsletterForm.reset();
+        } else {
+          throw new Error('Request failed');
+        }
+      } catch {
+        newsletterStatus.textContent = 'Something went wrong. Please try again.';
+        newsletterStatus.classList.add('form-status--error');
+      }
+    });
+  }
+</script>
+
+<style>
+  .content-narrow {
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Page Hero */
+  .page-hero {
+    padding: var(--space-2xl) 0 var(--space-xl);
+    text-align: center;
+  }
+
+  .page-hero__title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-md);
+  }
+
+  .page-hero__subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    max-width: 36rem;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* Neighbourhood Grid */
+  .neighbourhoods {
+    padding: 0 0 var(--space-2xl);
+  }
+
+  .neighbourhoods__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .neighbourhood-card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--space-lg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-surface);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .neighbourhood-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    color: var(--color-text);
+  }
+
+  .neighbourhood-card__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+  }
+
+  .neighbourhood-card__text {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    flex: 1;
+  }
+
+  .neighbourhood-card__link {
+    display: inline-block;
+    margin-top: var(--space-md);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-accent);
+  }
+
+  /* CTA */
+  .cta {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    white-space: nowrap;
+  }
+
+  .cta--primary {
+    background: var(--color-accent);
+    color: #ffffff;
+  }
+
+  .cta--primary:hover {
+    background: var(--color-accent-hover);
+    color: #ffffff;
+  }
+
+  /* Newsletter */
+  .newsletter {
+    padding: var(--space-2xl) 0;
+    background: var(--color-accent);
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .newsletter__heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+    color: #ffffff;
+  }
+
+  .newsletter__text {
+    font-size: 0.9375rem;
+    opacity: 0.9;
+    margin-bottom: var(--space-lg);
+    line-height: 1.7;
+  }
+
+  .newsletter__form {
+    display: flex;
+    gap: var(--space-sm);
+    max-width: 28rem;
+    margin: 0 auto;
+  }
+
+  .newsletter__input {
+    flex: 1;
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+  }
+
+  .newsletter__input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .newsletter__input:focus {
+    outline: none;
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  .newsletter__btn {
+    flex-shrink: 0;
+    border: 1px solid #ffffff;
+    background: #ffffff;
+    color: var(--color-accent);
+    cursor: pointer;
+    font-family: var(--font-sans);
+  }
+
+  .newsletter__btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--color-accent);
+  }
+
+  .form-status {
+    margin-top: var(--space-md);
+    font-size: 0.875rem;
+    min-height: 1.25rem;
+  }
+
+  .newsletter .form-status--success {
+    color: #ffffff;
+    opacity: 0.9;
+  }
+
+  .newsletter .form-status--error {
+    color: #fecaca;
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .neighbourhoods__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .newsletter__form {
+      flex-direction: column;
+    }
+  }
+</style>

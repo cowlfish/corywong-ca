@@ -1,0 +1,460 @@
+---
+import Layout from '../../../layouts/RealestateLayout.astro';
+---
+
+<Layout
+  title="Markham Real Estate | Neighbourhood Profile | Cory Wong, Real Estate Agent"
+  description="Markham neighbourhood profile covering Unionville, Cornell, Berczy Village, and Cathedraltown. Housing types, price ranges, transit, schools, and market insights from Cory Wong."
+  canonicalPath="/neighbourhoods/markham"
+>
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero__title">Markham</h1>
+      <p class="page-hero__subtitle">Neighbourhood Profile</p>
+    </div>
+  </section>
+
+  <!-- Profile Content -->
+  <article class="profile">
+    <div class="container content-narrow">
+      <div class="profile__intro">
+        <p>
+          Markham is one of the GTA's most sought-after communities, combining strong schools,
+          distinct neighbourhood character, and a growing tech and business corridor along
+          Highway 7. For families moving up from Toronto or first-time buyers seeking more
+          space, Markham consistently ranks among the top choices in York Region.
+        </p>
+      </div>
+
+      <!-- Character and Feel -->
+      <section class="profile__section">
+        <h2 class="profile__section-title">Character and Feel</h2>
+        <p>
+          Markham is not one neighbourhood but several distinct communities, each with its own
+          character. Unionville is the heritage heart &mdash; walkable, with a charming Main
+          Street, independent shops, and a village atmosphere. Cornell and Berczy Village are
+          newer master-planned communities with modern homes, parks, and well-designed
+          streetscapes. Cathedraltown offers larger lots and estate-style homes. Markham
+          Village provides a quieter, established residential feel.
+        </p>
+        <p>
+          Markham has a large East Asian community that contributes to an exceptional food
+          scene, cultural vibrancy, and strong community networks. The diversity is a defining
+          feature of the area and a significant draw for many buyers.
+        </p>
+      </section>
+
+      <!-- Who Buys -->
+      <section class="profile__section">
+        <h2 class="profile__section-title">Who Buys in Markham</h2>
+        <p>
+          Move-up buyers are the largest group &mdash; families outgrowing condos or smaller
+          homes in Toronto who want strong schools, more space, and a suburban community feel
+          without sacrificing accessibility. First-time buyers are active in the condo and
+          townhome segments, particularly near Highway 7. Investors look at properties near
+          York University's Markham campus, Seneca College, and the growing Highway 7 tech
+          corridor.
+        </p>
+      </section>
+
+      <!-- Housing Types and Price Ranges -->
+      <section class="profile__section">
+        <h2 class="profile__section-title">Housing Types and Price Ranges</h2>
+        <ul class="profile__price-list">
+          <li>
+            <span class="profile__price-label">Detached</span>
+            <span class="profile__price-value">$1.1M &ndash; $2.5M</span>
+          </li>
+          <li>
+            <span class="profile__price-label">Semi-detached</span>
+            <span class="profile__price-value">$900K &ndash; $1.3M</span>
+          </li>
+          <li>
+            <span class="profile__price-label">Freehold townhomes</span>
+            <span class="profile__price-value">$750K &ndash; $1.1M</span>
+          </li>
+          <li>
+            <span class="profile__price-label">Condos (near Hwy 7)</span>
+            <span class="profile__price-value">From $550K</span>
+          </li>
+        </ul>
+        <p class="profile__price-note">
+          Unionville and Angus Glen carry a premium due to school catchments, heritage character,
+          and proximity to amenities.
+        </p>
+        <p class="profile__price-disclaimer">
+          These are general estimates based on market activity in early 2026. Actual prices
+          vary by property. Speak with Cory for a current assessment.
+        </p>
+      </section>
+
+      <!-- Transit and Highways -->
+      <section class="profile__section">
+        <h2 class="profile__section-title">Transit and Highways</h2>
+        <p>
+          Markham has strong highway access via the 404 and DVP corridors for commuters heading
+          into Toronto. Highway 407 provides an east-west toll route that connects to Brampton
+          and Mississauga. The Stouffville GO line offers rail service into Union Station,
+          with stations at Markham, Centennial, and Unionville. York Region Transit (YRT)
+          provides local bus service.
+        </p>
+      </section>
+
+      <!-- Amenities and Schools -->
+      <section class="profile__section">
+        <h2 class="profile__section-title">Amenities and Schools</h2>
+        <p>
+          Markham offers strong retail options including Pacific Mall and Markville Mall, along
+          with a diverse restaurant scene that is among the best in the GTA. The area has
+          extensive parks, community centres, and recreational facilities.
+        </p>
+        <p>
+          Schools are a major draw. Unionville High School and Milliken Mills High School are
+          consistently ranked among the top public high schools in Ontario. The strength of
+          school catchments directly influences property values across Markham &mdash; homes
+          within top-ranked school boundaries carry a measurable premium.
+        </p>
+      </section>
+
+      <!-- Real Estate Perspective -->
+      <section class="profile__section">
+        <h2 class="profile__section-title">Real Estate Perspective</h2>
+        <p>
+          Markham has held its value through the broader correction better than many GTA
+          communities. Detached homes in desirable areas remain resilient, driven by
+          consistent demand from families prioritizing schools and community. Active listings
+          have increased, giving buyers more selection than they have had in recent years, but
+          well-priced homes in top school catchments continue to move quickly.
+        </p>
+      </section>
+
+      <!-- CTA -->
+      <div class="profile__cta">
+        <a href="/contact" class="cta cta--primary">Discuss Markham Real Estate with Cory</a>
+      </div>
+
+      <!-- Compliance -->
+      <div class="profile__compliance">
+        <p>
+          Cory Wong, Real Estate Agent. Real estate services provided through Trustwell
+          Realty Inc., Brokerage. Information is believed to be accurate but is not guaranteed.
+          Speak with Cory for advice specific to your situation.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container content-narrow">
+      <h2 class="newsletter__heading">Stay Informed</h2>
+      <p class="newsletter__text">
+        Get monthly market data, neighbourhood insights, and practical advice for buyers
+        and sellers across the Greater Toronto Area.
+      </p>
+      <form id="newsletter-form" class="newsletter__form" novalidate>
+        <input
+          type="email"
+          id="newsletter-email"
+          name="email"
+          placeholder="you@example.com"
+          required
+          autocomplete="email"
+          class="newsletter__input"
+        />
+        <button type="submit" class="cta cta--primary newsletter__btn">Subscribe</button>
+      </form>
+      <p id="newsletter-form-status" class="form-status" aria-live="polite"></p>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const newsletterForm = document.getElementById('newsletter-form') as HTMLFormElement | null;
+  const newsletterStatus = document.getElementById('newsletter-form-status');
+
+  if (newsletterForm && newsletterStatus) {
+    newsletterForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      newsletterStatus.textContent = '';
+      newsletterStatus.className = 'form-status';
+
+      const formData = new FormData(newsletterForm);
+      const payload = {
+        type: 'newsletter',
+        email: formData.get('email'),
+      };
+
+      try {
+        const res = await fetch('/api/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        if (res.ok) {
+          newsletterStatus.textContent = 'You\'re subscribed! Watch your inbox for the next report.';
+          newsletterStatus.classList.add('form-status--success');
+          newsletterForm.reset();
+        } else {
+          throw new Error('Request failed');
+        }
+      } catch {
+        newsletterStatus.textContent = 'Something went wrong. Please try again.';
+        newsletterStatus.classList.add('form-status--error');
+      }
+    });
+  }
+</script>
+
+<style>
+  .content-narrow {
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Page Hero */
+  .page-hero {
+    padding: var(--space-2xl) 0 var(--space-xl);
+    text-align: center;
+  }
+
+  .page-hero__title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-xs);
+  }
+
+  .page-hero__subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+
+  /* Profile */
+  .profile {
+    padding: 0 0 var(--space-2xl);
+  }
+
+  .profile__intro {
+    padding-bottom: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .profile__intro p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  .profile__section {
+    margin-bottom: var(--space-xl);
+  }
+
+  .profile__section-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+  }
+
+  .profile__section p {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+  }
+
+  .profile__section p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Price List */
+  .profile__price-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-md);
+  }
+
+  .profile__price-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.9375rem;
+    line-height: 1.5;
+  }
+
+  .profile__price-list li:first-child {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .profile__price-label {
+    color: var(--color-text);
+    font-weight: 500;
+  }
+
+  .profile__price-value {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-align: right;
+    padding-left: var(--space-md);
+  }
+
+  .profile__price-note {
+    font-size: 0.875rem;
+    color: var(--color-text-muted);
+    line-height: 1.6;
+    margin-bottom: var(--space-sm);
+  }
+
+  .profile__price-disclaimer {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  /* CTA */
+  .profile__cta {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cta {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    white-space: nowrap;
+  }
+
+  .cta--primary {
+    background: var(--color-accent);
+    color: #ffffff;
+  }
+
+  .cta--primary:hover {
+    background: var(--color-accent-hover);
+    color: #ffffff;
+  }
+
+  /* Compliance */
+  .profile__compliance {
+    margin-top: var(--space-lg);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .profile__compliance p {
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  /* Newsletter */
+  .newsletter {
+    padding: var(--space-2xl) 0;
+    background: var(--color-accent);
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .newsletter__heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+    color: #ffffff;
+  }
+
+  .newsletter__text {
+    font-size: 0.9375rem;
+    opacity: 0.9;
+    margin-bottom: var(--space-lg);
+    line-height: 1.7;
+  }
+
+  .newsletter__form {
+    display: flex;
+    gap: var(--space-sm);
+    max-width: 28rem;
+    margin: 0 auto;
+  }
+
+  .newsletter__input {
+    flex: 1;
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+  }
+
+  .newsletter__input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .newsletter__input:focus {
+    outline: none;
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  .newsletter__btn {
+    flex-shrink: 0;
+    border: 1px solid #ffffff;
+    background: #ffffff;
+    color: var(--color-accent);
+    cursor: pointer;
+    font-family: var(--font-sans);
+  }
+
+  .newsletter__btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--color-accent);
+  }
+
+  .form-status {
+    margin-top: var(--space-md);
+    font-size: 0.875rem;
+    min-height: 1.25rem;
+  }
+
+  .newsletter .form-status--success {
+    color: #ffffff;
+    opacity: 0.9;
+  }
+
+  .newsletter .form-status--error {
+    color: #fecaca;
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .profile__price-list li {
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .profile__price-value {
+      text-align: left;
+      padding-left: 0;
+    }
+
+    .newsletter__form {
+      flex-direction: column;
+    }
+  }
+</style>

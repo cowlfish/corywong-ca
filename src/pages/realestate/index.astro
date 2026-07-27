@@ -1,0 +1,349 @@
+---
+import Layout from '../../layouts/RealestateLayout.astro';
+---
+
+<Layout
+  title="Cory Wong, Real Estate Agent | Toronto, Markham, Richmond Hill | Trustwell Realty"
+  description="Cory Wong is a Real Estate Agent with Trustwell Realty Inc., Brokerage, serving Toronto, Markham, and Richmond Hill. Book a free buyer or seller consultation."
+  canonicalPath="/"
+>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero__title">Your Trusted Guide to GTA Real Estate</h1>
+      <p class="hero__subtitle">
+        Whether you're buying your first home, selling a property, or investing in the Greater Toronto Area,
+        I provide straightforward guidance and local expertise to help you make confident decisions.
+      </p>
+      <div class="hero__ctas">
+        <a href="/contact" class="cta cta--primary">Book a Consultation</a>
+        <a href="/buy" class="cta cta--secondary">Buying a Home</a>
+        <a href="/sell" class="cta cta--secondary">Selling a Home</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- How I Can Help -->
+  <section class="services">
+    <div class="container">
+      <h2 class="section-heading">How I Can Help</h2>
+      <div class="services__grid">
+        <a href="/buy" class="service-card">
+          <h3 class="service-card__title">Buyers</h3>
+          <p class="service-card__text">
+            From first-time buyers to seasoned investors, I help you find the right property, negotiate
+            the best terms, and navigate every step of the purchase process.
+          </p>
+          <span class="service-card__link">Learn more &rarr;</span>
+        </a>
+        <a href="/sell" class="service-card">
+          <h3 class="service-card__title">Sellers</h3>
+          <p class="service-card__text">
+            Get a clear market valuation, a tailored marketing plan, and skilled negotiation to
+            maximize your sale price and minimize time on market.
+          </p>
+          <span class="service-card__link">Learn more &rarr;</span>
+        </a>
+        <a href="/market-updates" class="service-card">
+          <h3 class="service-card__title">Market Updates</h3>
+          <p class="service-card__text">
+            Stay informed with monthly GTA market reports, neighbourhood insights, and data-driven
+            analysis of trends across Toronto, Markham, and Richmond Hill.
+          </p>
+          <span class="service-card__link">Learn more &rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Preview -->
+  <section class="about-preview">
+    <div class="container">
+      <div class="about-preview__inner">
+        <img
+          src="/headshot.jpg"
+          alt="Cory Wong, Real Estate Agent"
+          class="about-preview__photo"
+          width="200"
+          height="200"
+        />
+        <div class="about-preview__content">
+          <h2 class="section-heading">About Cory</h2>
+          <p>
+            I'm a Real Estate Agent with Trustwell Realty Inc., Brokerage, serving buyers and sellers
+            across Toronto, Markham, Richmond Hill, and the broader GTA. My approach is simple: honest
+            advice, thorough market research, and clear communication at every stage of the transaction.
+          </p>
+          <p>
+            I believe that real estate decisions are among the most important financial choices you'll
+            make, and you deserve an agent who treats them that way.
+          </p>
+          <a href="/about" class="about-preview__link">Learn more &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cross-Links -->
+  <section class="cross-links">
+    <div class="container">
+      <div class="cross-links__grid">
+        <a href="https://portal.corywong.ca" class="cross-link-card">
+          <p class="cross-link-card__label">Already a client?</p>
+          <p class="cross-link-card__action">Visit the Client Portal &rarr;</p>
+        </a>
+        <a href="https://corywong.ca" class="cross-link-card">
+          <p class="cross-link-card__label">Want to learn more about Cory?</p>
+          <p class="cross-link-card__action">Learn more at corywong.ca &rarr;</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <section class="cta-banner">
+    <div class="container">
+      <h2 class="cta-banner__title">Ready to Get Started?</h2>
+      <p class="cta-banner__text">
+        Book a free, no-obligation consultation to discuss your real estate goals.
+      </p>
+      <a href="/contact" class="cta cta--primary">Book a Consultation</a>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* Hero */
+  .hero {
+    padding: var(--space-2xl) 0;
+    text-align: center;
+  }
+
+  .hero__title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-md);
+  }
+
+  .hero__subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    max-width: 36rem;
+    margin: 0 auto var(--space-lg);
+    line-height: 1.7;
+  }
+
+  .hero__ctas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--space-sm);
+  }
+
+  /* CTA Buttons */
+  .cta {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+    white-space: nowrap;
+    cursor: pointer;
+  }
+
+  .cta--primary {
+    background: var(--color-accent);
+    color: #ffffff;
+  }
+
+  .cta--primary:hover {
+    background: var(--color-accent-hover);
+    color: #ffffff;
+  }
+
+  .cta--secondary {
+    background: transparent;
+    border: 1px solid var(--color-accent);
+    color: var(--color-accent);
+  }
+
+  .cta--secondary:hover {
+    background: var(--color-accent);
+    color: #ffffff;
+  }
+
+  /* Section Heading */
+  .section-heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+    margin-bottom: var(--space-lg);
+  }
+
+  /* Services */
+  .services {
+    padding: var(--space-2xl) 0;
+    text-align: center;
+  }
+
+  .services__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: var(--space-lg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-surface);
+    text-decoration: none;
+    color: var(--color-text);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .service-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+    color: var(--color-text);
+  }
+
+  .service-card__title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: var(--space-sm);
+  }
+
+  .service-card__text {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    flex: 1;
+  }
+
+  .service-card__link {
+    display: inline-block;
+    margin-top: var(--space-md);
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--color-accent);
+  }
+
+  /* About Preview */
+  .about-preview {
+    padding: var(--space-2xl) 0;
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .about-preview__inner {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-xl);
+  }
+
+  .about-preview__photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    flex-shrink: 0;
+  }
+
+  .about-preview__content p {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    line-height: 1.7;
+    margin-bottom: var(--space-md);
+  }
+
+  .about-preview__link {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-accent);
+  }
+
+  /* Cross-Links */
+  .cross-links {
+    padding: var(--space-2xl) 0;
+  }
+
+  .cross-links__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg);
+  }
+
+  .cross-link-card {
+    display: block;
+    padding: var(--space-lg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    background: var(--color-surface);
+    text-decoration: none;
+    text-align: center;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  }
+
+  .cross-link-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  }
+
+  .cross-link-card__label {
+    font-size: 0.9375rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-xs);
+  }
+
+  .cross-link-card__action {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: var(--color-accent);
+  }
+
+  /* CTA Banner */
+  .cta-banner {
+    padding: var(--space-2xl) 0;
+    text-align: center;
+    background: var(--color-surface);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cta-banner__title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+  }
+
+  .cta-banner__text {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-lg);
+  }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .services__grid {
+      grid-template-columns: 1fr;
+    }
+
+    .about-preview__inner {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .cross-links__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

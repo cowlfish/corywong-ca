@@ -1,0 +1,449 @@
+---
+import Layout from '../../../layouts/RealestateLayout.astro';
+---
+
+<Layout
+  title="Toronto Real Estate | Neighbourhood Profile | Cory Wong, Real Estate Agent"
+  description="Toronto neighbourhood profile covering downtown, midtown, east end, and west end. Housing types, price ranges, transit, schools, and market insights from Cory Wong."
+  canonicalPath="/neighbourhoods/toronto"
+>
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1 class="page-hero__title">Toronto</h1>
+      <p class="page-hero__subtitle">Neighbourhood Profile</p>
+    </div>
+  </section>
+
+  <!-- Profile Content -->
+  <article class="profile">
+    <div class="container content-narrow">
+      <div class="profile__intro">
+        <p>
+          Toronto is the GTA's largest and most segmented real estate market. Each area &mdash;
+          downtown, midtown, east end, west end &mdash; has its own character, housing stock,
+          and price dynamics. Understanding the differences between these pockets is essential
+          for making a sound buying or selling decision.
+        </p>
+      </div>
+
+      <!-- Character and Feel -->
+      <section class="profile__section">
+        <h2 class="profile__section-title">Character and Feel</h2>
+        <p>
+          Downtown Toronto is dense, walkable, and condo-dominant, with a mix of historic
+          neighbourhoods and glass towers. Midtown offers tree-lined streets with a mix of
+          detached homes, semis, and low-rise condos. The east end &mdash; from Leslieville
+          through the Danforth to Scarborough &mdash; has become one of the city's most active
+          markets for young families seeking freehold homes. The west end, from Parkdale through
+          High Park to Etobicoke, offers a similar mix with slightly different price points and
+          community character.
+        </p>
+      </section>
+
+      <!-- Who Buys -->
+      <section class="profile__section">
+        <h2 class="profile__section-title">Who Buys in Toronto</h2>
+        <p>
+          The buyer profile varies significantly by area. First-time buyers often enter through
+          the condo market downtown or in emerging neighbourhoods. Move-up buyers look for
+          freehold properties &mdash; semis, towns, and detached homes &mdash; in midtown, the
+          east end, and the west end. Investors remain active in the condo segment, particularly
+          near transit and post-secondary institutions.
+        </p>
+      </section>
+
+      <!-- Housing Types and Price Ranges -->
+      <section class="profile__section">
+        <h2 class="profile__section-title">Housing Types and Price Ranges</h2>
+        <ul class="profile__price-list">
+          <li>
+            <span class="profile__price-label">Detached (central Toronto)</span>
+            <span class="profile__price-value">$1.5M &ndash; $3.5M+</span>
+          </li>
+          <li>
+            <span class="profile__price-label">Detached (east/west end)</span>
+            <span class="profile__price-value">$1.1M &ndash; $2M</span>
+          </li>
+          <li>
+            <span class="profile__price-label">Semi-detached and townhomes</span>
+            <span class="profile__price-value">$900K &ndash; $1.6M</span>
+          </li>
+          <li>
+            <span class="profile__price-label">Condos (downtown)</span>
+            <span class="profile__price-value">$500K &ndash; $1.2M</span>
+          </li>
+          <li>
+            <span class="profile__price-label">Condos (outer areas)</span>
+            <span class="profile__price-value">From $450K</span>
+          </li>
+        </ul>
+        <p class="profile__price-disclaimer">
+          These are general estimates based on market activity in early 2026. Actual prices
+          vary by property. Speak with Cory for a current assessment.
+        </p>
+      </section>
+
+      <!-- Transit and Highways -->
+      <section class="profile__section">
+        <h2 class="profile__section-title">Transit and Highways</h2>
+        <p>
+          Toronto has the GTA's most extensive transit network. The TTC operates subway,
+          streetcar, and bus routes across the city. GO Transit's Union Station hub connects
+          to all regional rail lines. The Eglinton Crosstown LRT is coming online, adding
+          rapid transit along Eglinton Avenue and improving connectivity between midtown and
+          the east end.
+        </p>
+      </section>
+
+      <!-- Amenities and Schools -->
+      <section class="profile__section">
+        <h2 class="profile__section-title">Amenities and Schools</h2>
+        <p>
+          Toronto offers unmatched urban amenities: major hospitals (SickKids, Mount Sinai,
+          St. Michael's, Sunnybrook), the University of Toronto, and a cultural scene that
+          includes the ROM, AGO, and dozens of neighbourhood-level arts and dining
+          destinations.
+        </p>
+        <p>
+          Schools are managed by the Toronto District School Board (TDSB) and the Toronto
+          Catholic District School Board (TCDSB). Demand in top public school catchment areas
+          directly affects home prices &mdash; properties within sought-after school boundaries
+          carry a measurable premium.
+        </p>
+      </section>
+
+      <!-- Real Estate Perspective -->
+      <section class="profile__section">
+        <h2 class="profile__section-title">Real Estate Perspective</h2>
+        <p>
+          The condo segment has softened, creating genuine opportunity for buyers who have been
+          priced out in previous years. Inventory is elevated and sellers are more willing to
+          negotiate. Freehold properties remain resilient, particularly in established
+          neighbourhoods with good schools and transit access. For sellers, accurate pricing
+          is critical &mdash; overpriced listings are sitting longer than they have in years.
+        </p>
+      </section>
+
+      <!-- CTA -->
+      <div class="profile__cta">
+        <a href="/contact" class="cta cta--primary">Discuss Toronto Real Estate with Cory</a>
+      </div>
+
+      <!-- Compliance -->
+      <div class="profile__compliance">
+        <p>
+          Cory Wong, Real Estate Agent. Real estate services provided through Trustwell
+          Realty Inc., Brokerage. Information is believed to be accurate but is not guaranteed.
+          Speak with Cory for advice specific to your situation.
+        </p>
+      </div>
+    </div>
+  </article>
+
+  <!-- Newsletter -->
+  <section class="newsletter">
+    <div class="container content-narrow">
+      <h2 class="newsletter__heading">Stay Informed</h2>
+      <p class="newsletter__text">
+        Get monthly market data, neighbourhood insights, and practical advice for buyers
+        and sellers across the Greater Toronto Area.
+      </p>
+      <form id="newsletter-form" class="newsletter__form" novalidate>
+        <input
+          type="email"
+          id="newsletter-email"
+          name="email"
+          placeholder="you@example.com"
+          required
+          autocomplete="email"
+          class="newsletter__input"
+        />
+        <button type="submit" class="cta cta--primary newsletter__btn">Subscribe</button>
+      </form>
+      <p id="newsletter-form-status" class="form-status" aria-live="polite"></p>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const newsletterForm = document.getElementById('newsletter-form') as HTMLFormElement | null;
+  const newsletterStatus = document.getElementById('newsletter-form-status');
+
+  if (newsletterForm && newsletterStatus) {
+    newsletterForm.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      newsletterStatus.textContent = '';
+      newsletterStatus.className = 'form-status';
+
+      const formData = new FormData(newsletterForm);
+      const payload = {
+        type: 'newsletter',
+        email: formData.get('email'),
+      };
+
+      try {
+        const res = await fetch('/api/lead', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        });
+
+        if (res.ok) {
+          newsletterStatus.textContent = 'You\'re subscribed! Watch your inbox for the next report.';
+          newsletterStatus.classList.add('form-status--success');
+          newsletterForm.reset();
+        } else {
+          throw new Error('Request failed');
+        }
+      } catch {
+        newsletterStatus.textContent = 'Something went wrong. Please try again.';
+        newsletterStatus.classList.add('form-status--error');
+      }
+    });
+  }
+</script>
+
+<style>
+  .content-narrow {
+    max-width: 36rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Page Hero */
+  .page-hero {
+    padding: var(--space-2xl) 0 var(--space-xl);
+    text-align: center;
+  }
+
+  .page-hero__title {
+    font-size: clamp(1.75rem, 4vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin-bottom: var(--space-xs);
+  }
+
+  .page-hero__subtitle {
+    font-size: 1.125rem;
+    color: var(--color-text-muted);
+    font-weight: 500;
+  }
+
+  /* Profile */
+  .profile {
+    padding: 0 0 var(--space-2xl);
+  }
+
+  .profile__intro {
+    padding-bottom: var(--space-lg);
+    margin-bottom: var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .profile__intro p {
+    font-size: 1.0625rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+  }
+
+  .profile__section {
+    margin-bottom: var(--space-xl);
+  }
+
+  .profile__section-title {
+    font-size: 1.125rem;
+    font-weight: 600;
+    margin-bottom: var(--space-md);
+  }
+
+  .profile__section p {
+    font-size: 0.9375rem;
+    line-height: 1.7;
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-md);
+  }
+
+  .profile__section p:last-child {
+    margin-bottom: 0;
+  }
+
+  /* Price List */
+  .profile__price-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 var(--space-md);
+  }
+
+  .profile__price-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--color-border);
+    font-size: 0.9375rem;
+    line-height: 1.5;
+  }
+
+  .profile__price-list li:first-child {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .profile__price-label {
+    color: var(--color-text);
+    font-weight: 500;
+  }
+
+  .profile__price-value {
+    color: var(--color-accent);
+    font-weight: 600;
+    text-align: right;
+    padding-left: var(--space-md);
+  }
+
+  .profile__price-disclaimer {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    line-height: 1.6;
+  }
+
+  /* CTA */
+  .profile__cta {
+    margin-top: var(--space-xl);
+    padding-top: var(--space-xl);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .cta {
+    display: inline-block;
+    padding: 0.75rem 1.75rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9375rem;
+    text-decoration: none;
+    transition: background-color 0.15s ease, color 0.15s ease;
+    white-space: nowrap;
+  }
+
+  .cta--primary {
+    background: var(--color-accent);
+    color: #ffffff;
+  }
+
+  .cta--primary:hover {
+    background: var(--color-accent-hover);
+    color: #ffffff;
+  }
+
+  /* Compliance */
+  .profile__compliance {
+    margin-top: var(--space-lg);
+    padding-top: var(--space-lg);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .profile__compliance p {
+    font-size: 0.8125rem;
+    line-height: 1.6;
+    color: var(--color-text-muted);
+    font-style: italic;
+  }
+
+  /* Newsletter */
+  .newsletter {
+    padding: var(--space-2xl) 0;
+    background: var(--color-accent);
+    color: #ffffff;
+    text-align: center;
+  }
+
+  .newsletter__heading {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: var(--space-sm);
+    color: #ffffff;
+  }
+
+  .newsletter__text {
+    font-size: 0.9375rem;
+    opacity: 0.9;
+    margin-bottom: var(--space-lg);
+    line-height: 1.7;
+  }
+
+  .newsletter__form {
+    display: flex;
+    gap: var(--space-sm);
+    max-width: 28rem;
+    margin: 0 auto;
+  }
+
+  .newsletter__input {
+    flex: 1;
+    font-family: var(--font-sans);
+    font-size: 0.9375rem;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    background: rgba(255, 255, 255, 0.15);
+    color: #ffffff;
+  }
+
+  .newsletter__input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+  }
+
+  .newsletter__input:focus {
+    outline: none;
+    border-color: #ffffff;
+    background: rgba(255, 255, 255, 0.25);
+  }
+
+  .newsletter__btn {
+    flex-shrink: 0;
+    border: 1px solid #ffffff;
+    background: #ffffff;
+    color: var(--color-accent);
+    cursor: pointer;
+    font-family: var(--font-sans);
+  }
+
+  .newsletter__btn:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--color-accent);
+  }
+
+  .form-status {
+    margin-top: var(--space-md);
+    font-size: 0.875rem;
+    min-height: 1.25rem;
+  }
+
+  .newsletter .form-status--success {
+    color: #ffffff;
+    opacity: 0.9;
+  }
+
+  .newsletter .form-status--error {
+    color: #fecaca;
+  }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .profile__price-list li {
+      flex-direction: column;
+      gap: var(--space-xs);
+    }
+
+    .profile__price-value {
+      text-align: left;
+      padding-left: 0;
+    }
+
+    .newsletter__form {
+      flex-direction: column;
+    }
+  }
+</style>
